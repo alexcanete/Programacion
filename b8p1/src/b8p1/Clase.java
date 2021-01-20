@@ -42,7 +42,10 @@ public class Clase {
 	}
 
 	public void setshAnio(short shAnio) {
-		this.shAnio = shAnio;
+		if ((shAnio % 4 == 0 && shAnio % 100 != 0) || (shAnio % 100 == 0 && shAnio % 400 == 0)) {
+			this.shAnio = shAnio;
+		}
+		
 	}
 	
 	
