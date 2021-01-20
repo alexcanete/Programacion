@@ -20,7 +20,10 @@ public class Clase {
 	}
 
 	public void setbDia(byte bDia) {
-		this.bDia = bDia;
+		if (bDia<=31) {
+			this.bDia = bDia;
+		}
+		
 	}
 
 	public byte getbMes() {
@@ -28,7 +31,10 @@ public class Clase {
 	}
 
 	public void setbMes(byte bMes) {
-		this.bMes = bMes;
+		if (bMes<=12) {
+			this.bMes = bMes;
+		}
+		
 	}
 
 	public short getShAnio() {
