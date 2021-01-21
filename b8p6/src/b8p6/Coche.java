@@ -1,5 +1,7 @@
 package b8p6;
 
+import java.util.Set;
+
 public class Coche {
 
 	private String sModelo, sColor, sTipo, sSeguro, sMatricula;
@@ -7,7 +9,13 @@ public class Coche {
 	private boolean boMetalizada;
 	
 	public Coche (String sModelo, String sColor, String sTipo, String sSeguro, String sMatricula, short shAnio, boolean boMetalizado){
-		
+		setsModelo(sModelo);
+		setsColor(sColor);
+		setsTipo(sTipo);
+		setsSeguro(sSeguro);
+		setsMatricula(sMatricula);
+		setShAnio(shAnio);
+		setBoMetalizada(boMetalizado);
 		
 	}
 
