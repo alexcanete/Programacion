@@ -8,6 +8,10 @@ public class Punto {
 		setdX(dX);
 		setdY(dY);
 	}
+	public Punto (double dX, double dY) {
+		setdX(dX);
+		setdY(dY);
+	}
 
 	public void borrar() {
 		setdX(0);
