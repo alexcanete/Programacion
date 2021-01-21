@@ -4,7 +4,7 @@ public class Punto {
 
 	private double dX, dY;
 	
-	public Punto (double dX, double dY) {
+	public Punto () {
 		setdX(dX);
 		setdY(dY);
 	}
@@ -14,9 +14,9 @@ public class Punto {
 		setdY(0);
 	}
 	
-	public void mover(double dX) {
-		this.dX=dX;
-		this.dY=dY;
+	public void mover(double dX, double dY) {
+		this.dX= dX;
+		this.dY= dY;
 	}
 	
 	public void mover(Punto punto) {
