@@ -2,7 +2,8 @@ package b8p3;
 
 public class Climatizador {
 	private boolean booEncendido;
-	private float fTActual, fTDeseada;
+	float fTActual;
+	private float fTDeseada;
 	
 	public Climatizador (boolean booEncendido, float fTActual, float fTDeseada) {
 		setBooEncendido(booEncendido);
@@ -40,7 +41,12 @@ public class Climatizador {
 		return "Climatizador [booEncendido=" + booEncendido + ", fTActual=" + fTActual + ", fTDeseada=" + fTDeseada
 				+ "]";
 	}
-	public void enfriar() {
-		;
+	public void enfriar(float fTActual, float fTDeseada ) {
+		float fTempe;
+		for (fTempe = fTActual ; fTActual < fTDeseada; i++) {
+			
+		}
+		
+		
 	}
 }
