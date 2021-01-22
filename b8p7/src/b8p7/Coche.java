@@ -72,8 +72,8 @@ public class Coche {
 	public void setBoMetalizada(boolean boMetalizada) {
 		this.boMetalizada = boMetalizada;
 	}
-	 public void imprimeCoche(String sModelo, String sColor) {
-		 System.out.println(this.sModelo +this.sColor);
+	 public void imprimeCoche() {
+		 System.out.println(this.getsModelo() + " " + this.getsColor());
 	 }
 
 	@Override
