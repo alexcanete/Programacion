@@ -73,7 +73,7 @@ public class Coche {
 		this.boMetalizada = boMetalizada;
 	}
 	 public void imprimeCoche() {
-		 System.out.println(this.getsModelo() + " " + this.getsColor());
+		 System.out.println("El coche es un "+this.getsModelo() + " y su color es " + this.getsColor());
 	 }
 
 	@Override

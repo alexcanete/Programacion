@@ -1,7 +1,7 @@
 package b8p7;
 
 public class b8p7 {
-	
+	// Problemas 7 y 8 están juntos
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//String sModelo, String sColor, String sTipo, String sSeguro, String sMatricula, short shAnio, boolean boMetalizado
