@@ -7,9 +7,6 @@ public class b8p3 {
 		//boolean booEncendido, float fTActual, float fTDeseada
 		Climatizador cClimatizador= new Climatizador((boolean)true, (float)19.0, (float)24.0);
 		System.out.println(cClimatizador);
-		if (Climatizador.fTActual > Climatizador.fTDeseada) {
-			Climatizador.enfriar;
-		}
 	}
 
 }

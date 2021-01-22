@@ -43,10 +43,16 @@ public class Climatizador {
 	}
 	public void enfriar(float fTActual, float fTDeseada ) {
 		float fTempe;
-		for (fTempe = fTActual ; fTActual < fTDeseada; i++) {
-			
+		for (fTempe = fTActual ; fTActual < fTDeseada; fTempe-=0.5) {
+			System.out.println(fTempe);
 		}
+	
+	}
+	public void calentar(float fTActual, float fTDeseada) {
+	float fTempe;
+	for (fTempe = fTActual ; fTActual < fTDeseada; fTempe=(float) 0.5) {
+		System.out.println(fTempe);
 		
-		
+		}	
 	}
 }
