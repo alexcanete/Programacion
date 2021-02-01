@@ -1010,3 +1010,16 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/b9ej2/src/b9e
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2021-02-01 12:15:39.989
 !MESSAGE Cannot determine URI for '/b9ej2/src/b9ej2/Persona.java'.
+
+!ENTRY org.eclipse.core.resources 2 2 2021-02-01 12:45:56.522
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2021-02-01 12:45:56.522
+!MESSAGE The project description file (.project) for 'b9ej1' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2021-02-01 12:45:56.522
+!MESSAGE The project description file (.project) for 'b9ej2' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2021-02-01 12:45:56.522
+!MESSAGE The project description file (.project) for 'b9ej3' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2021-02-01 12:45:56.522
+!MESSAGE The project description file (.project) for 'b9p1' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2021-02-01 12:45:56.522
+!MESSAGE The project description file (.project) for 'b9p2' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
