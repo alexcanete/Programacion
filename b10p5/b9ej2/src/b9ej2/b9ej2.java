@@ -8,6 +8,6 @@ public class b9ej2 {
 		Persona oPersona = new Persona("Alex", "Canete","hajiphylakti" );
 		
 		//oPersona.sApellido1= "Perez"; asi violo a la clase
-	}
+	} 
 
 }
