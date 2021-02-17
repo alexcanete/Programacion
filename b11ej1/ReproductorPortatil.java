@@ -2,7 +2,8 @@ public class ReproductorPortatil implements IReproductorPortatil{
     private String sMarca, sModelo, sTipoDeAlmacenamiento, sCapacidadDeAlmacenamiento, sPantalla, sTipoDeBacteria;
     private boolean boReproduceSonido, boReproduceVideo;
     private byte bAutonomia;
-    private float fPeso, fAncho, fAlto, fGrosor;    
+    private float fPeso, fAncho, fAlto, fGrosor;  
+    private int iCapacidadDeAlmacenamiento;  
 
 
     @Override
@@ -19,7 +20,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public boolean getboReproduceVideo() {
         // TODO Auto-generated method stub
-        return false;
+        return boReproduceVideo;
     }
 
     @Override
@@ -31,7 +32,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public String getsTipoDeAlmacenamiento() {
         // TODO Auto-generated method stub
-        return null;
+        return sTipoDeAlmacenamiento;
     }
 
     @Override
@@ -43,7 +44,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public int getciCapacidadDeAlmacenamiento() {
         // TODO Auto-generated method stub
-        return 0;
+        return iCapacidadDeAlmacenamiento;
     }
 
     @Override
@@ -55,7 +56,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public String getsPantalla() {
         // TODO Auto-generated method stub
-        return null;
+        return sPantalla;
     }
 
     @Override
@@ -67,7 +68,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public String getsTipoDeBacteria() {
         // TODO Auto-generated method stub
-        return null;
+        return sTipoDeBacteria;
     }
 
     @Override
@@ -79,7 +80,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public String getsMarca() {
         // TODO Auto-generated method stub
-        return null;
+        return sMarca;
     }
 
     @Override
@@ -91,7 +92,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public String getsModelo() {
         // TODO Auto-generated method stub
-        return null;
+        return sModelo;
     }
 
     @Override
@@ -103,7 +104,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public byte getbAutonomia() {
         // TODO Auto-generated method stub
-        return 0;
+        return bAutonomia;
     }
 
     @Override
@@ -115,7 +116,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public float getfPeso() {
         // TODO Auto-generated method stub
-        return 0;
+        return fPeso;
     }
 
     @Override
@@ -127,7 +128,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public float getfAncho() {
         // TODO Auto-generated method stub
-        return 0;
+        return fAncho;
     }
 
     @Override
@@ -139,7 +140,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public float getfAlto() {
         // TODO Auto-generated method stub
-        return 0;
+        return fAlto;
     }
 
     @Override
@@ -151,7 +152,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     @Override
     public float getfGrosor() {
         // TODO Auto-generated method stub
-        return 0;
+        return fGrosor;
     }
 
     @Override
