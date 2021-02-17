@@ -14,23 +14,23 @@ public interface IReproductorPortatil {
     public final String pilas="Pilas";
     public final String liion="Li-Ion";
     
-    public boolean getreproduceSonido();
-    public void setreproduceSonido(boolean reproduceSonido);
+    public boolean getboReproduceSonido();
+    public void setboReproduceSonido(boolean boReproduceSonido);
 
-    public boolean getreproduceVideo();
-    public void setreproduceVideo(boolean reproduceVideo);
+    public boolean getboReproduceVideo();
+    public void setboReproduceVideo(boolean boReproduceVideo);
 
-    public String gettipoDeAlmacenamiento();
-    public void settipoDeAlmacenamiento(String tipoDeAlmacenamiento);
+    public String getsTipoDeAlmacenamiento();
+    public void setsTipoDeAlmacenamiento(String sTipoDeAlmacenamiento);
 
-    public int getcapacidadDeAlmacenamiento();
-    public void setcapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento);
+    public int getciCapacidadDeAlmacenamiento();
+    public void setiCapacidadDeAlmacenamiento(int iCapacidadDeAlmacenamiento);
 
-    public String getpantalla();
-    public void setpantalla(String pantalla);
+    public String getsPantalla();
+    public void setsPantalla(String sPantalla);
 
-    public String gettipoDeBacteria();
-    public void settipoDeBacteria(String tipoDeBacteria);
+    public String getsTipoDeBacteria();
+    public void setsTipoDeBacteria(String sTipoDeBacteria);
 
     public String getsMarca();
     public void setsMarca(String sMarca);
@@ -38,7 +38,18 @@ public interface IReproductorPortatil {
     public String getsModelo();
     public void setsModelo(String sModelo);
 
-        
+    public byte getbAutonomia();
+    public void setsbAutonomia(byte bAutonomia);    
 
-    
+    public float getfPeso();
+    public void setfPeso(float fPeso);
+
+    public float getfAncho();
+    public void setfAncho(float fAncho);
+
+    public float getfAlto();
+    public void setfAlto(float fAlto);
+
+    public float getfGrosor();
+    public void setfGrosor(float fGrosor);
 }
