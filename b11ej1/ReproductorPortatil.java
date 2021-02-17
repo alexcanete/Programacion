@@ -6,6 +6,13 @@ public class ReproductorPortatil implements IReproductorPortatil{
     private int iCapacidadDeAlmacenamiento;  
 
 
+    public ReproductorPortatil(String sMarca, String sModelo, String sTipoDeAlmacenamiento){
+        setsMarca(sMarca);
+        setsModelo(sModelo);
+        setsTipoDeAlmacenamiento(sTipoDeAlmacenamiento);
+
+    }
+
     @Override
     public boolean getboReproduceSonido() {
         return boReproduceSonido;
@@ -13,151 +20,137 @@ public class ReproductorPortatil implements IReproductorPortatil{
 
     @Override
     public void setboReproduceSonido(boolean boReproduceSonido) {
-        // TODO Auto-generated method stub
+        this.boReproduceSonido = boReproduceSonido;
 
     }
 
     @Override
     public boolean getboReproduceVideo() {
-        // TODO Auto-generated method stub
         return boReproduceVideo;
     }
 
     @Override
     public void setboReproduceVideo(boolean boReproduceVideo) {
-        // TODO Auto-generated method stub
+        this.boReproduceSonido = boReproduceSonido;
 
     }
 
     @Override
     public String getsTipoDeAlmacenamiento() {
-        // TODO Auto-generated method stub
         return sTipoDeAlmacenamiento;
     }
 
     @Override
     public void setsTipoDeAlmacenamiento(String sTipoDeAlmacenamiento) {
-        // TODO Auto-generated method stub
+        this.sTipoDeAlmacenamiento= sTipoDeAlmacenamiento;
 
     }
 
     @Override
     public int getciCapacidadDeAlmacenamiento() {
-        // TODO Auto-generated method stub
         return iCapacidadDeAlmacenamiento;
     }
 
     @Override
     public void setiCapacidadDeAlmacenamiento(int iCapacidadDeAlmacenamiento) {
-        // TODO Auto-generated method stub
+        this.iCapacidadDeAlmacenamiento= iCapacidadDeAlmacenamiento;
 
     }
 
     @Override
     public String getsPantalla() {
-        // TODO Auto-generated method stub
         return sPantalla;
     }
 
     @Override
     public void setsPantalla(String sPantalla) {
-        // TODO Auto-generated method stub
-
+        this.sPantalla = sPantalla;
     }
 
     @Override
     public String getsTipoDeBacteria() {
-        // TODO Auto-generated method stub
         return sTipoDeBacteria;
     }
 
     @Override
     public void setsTipoDeBacteria(String sTipoDeBacteria) {
-        // TODO Auto-generated method stub
+        this.sTipoDeBacteria = sTipoDeBacteria;
 
     }
 
     @Override
     public String getsMarca() {
-        // TODO Auto-generated method stub
         return sMarca;
     }
 
     @Override
     public void setsMarca(String sMarca) {
-        // TODO Auto-generated method stub
-
+        this.sMarca = sMarca;
     }
 
     @Override
     public String getsModelo() {
-        // TODO Auto-generated method stub
         return sModelo;
     }
 
     @Override
     public void setsModelo(String sModelo) {
-        // TODO Auto-generated method stub
+       this.sModelo= sModelo;
 
     }
 
     @Override
     public byte getbAutonomia() {
-        // TODO Auto-generated method stub
         return bAutonomia;
     }
 
     @Override
     public void setsbAutonomia(byte bAutonomia) {
-        // TODO Auto-generated method stub
+        this.bAutonomia = bAutonomia;
 
     }
 
     @Override
     public float getfPeso() {
-        // TODO Auto-generated method stub
         return fPeso;
     }
 
     @Override
     public void setfPeso(float fPeso) {
-        // TODO Auto-generated method stub
+        this.fPeso = fPeso;
 
     }
 
     @Override
     public float getfAncho() {
-        // TODO Auto-generated method stub
         return fAncho;
     }
 
     @Override
     public void setfAncho(float fAncho) {
-        // TODO Auto-generated method stub
+        this.fAncho= fAncho;
 
     }
 
     @Override
     public float getfAlto() {
-        // TODO Auto-generated method stub
         return fAlto;
     }
 
     @Override
     public void setfAlto(float fAlto) {
-        // TODO Auto-generated method stub
+        this.fAlto= fAlto;
 
     }
 
     @Override
     public float getfGrosor() {
-        // TODO Auto-generated method stub
         return fGrosor;
     }
 
     @Override
     public void setfGrosor(float fGrosor) {
-        // TODO Auto-generated method stub
+        this.fGrosor= fGrosor;
 
     }
     
