@@ -1,14 +1,14 @@
 public interface IReproductorAudio{
-    public final String pantallanull="Ninguna";
-    public final String txt="Texto";
-    public final String monocromo="Monocromo";
-    public final String color= "Color";
-    public final String cd="CD";
-    public final String dvd= "DVD";
-    public final String memoriaflash= "MemoriaFlash";
-    public final String minidisk= "Minidisk";
-    public final String pilas="Pilas";
-    public final String liion="Li-Ion";
+    public final String sPantallanull="Ninguna";
+    public final String sTxt="Texto";
+    public final String sMonocromo="Monocromo";
+    public final String sColor= "Color";
+    public final String sCd="CD";
+    public final String sDvd= "DVD";
+    public final String sMemoriaflash= "MemoriaFlash";
+    public final String sMinidisk= "Minidisk";
+    public final String sPilas="Pilas";
+    public final String sLiion="Li-Ion";
     
     public boolean getboReproduceSonido();
     public void setboReproduceSonido(boolean boReproduceSonido);

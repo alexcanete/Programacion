@@ -5,6 +5,7 @@ public class b11ej1{
 
     System.out.println(oReproductorPortatil.getsMarca());
     
+    System.out.println(oReproductorPortatil.toString());
 
     }   
 }

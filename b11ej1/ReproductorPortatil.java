@@ -31,7 +31,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
 
     @Override
     public void setboReproduceVideo(boolean boReproduceVideo) {
-        this.boReproduceSonido = boReproduceSonido;
+        this.boReproduceVideo = boReproduceVideo;
 
     }
 
@@ -153,5 +153,13 @@ public class ReproductorPortatil implements IReproductorPortatil{
         this.fGrosor= fGrosor;
 
     }
+
+    @Override
+    public String toString() {
+        return "ReproductorPortatil [sMarca=" + sMarca + ", sModelo=" + sModelo + ", sTipoDeAlmacenamiento="
+                + sTipoDeAlmacenamiento + "]";
+    }
+
+    
     
 	}
