@@ -58,5 +58,19 @@ public interface IReproductorAudio{
     public boolean getboReproduWMA();
     public void setboReproduWMA(boolean boReproduceWMA);
 
+    public boolean getboReproduceVorbis();
+    public void setboReproduceVorbis(boolean boReproduceVorbis);
+
+    public boolean getboAccesoPorCarpetas();
+    public void setboAccesoPorCarpetas(boolean boAccesoPorCarpetas);
+
+    public boolean getboRadio();
+    public void setboRadio(boolean boRadio);
+
+    public boolean getboGrabacionDeVoz();
+    public void setboGrabacionDeVoz(boolean boGrabacioDeVoz);
+
     
+
+
 }

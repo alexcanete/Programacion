@@ -2,8 +2,7 @@ public class ReproductorPortatil implements IReproductorPortatil{
     private String sMarca, sModelo, sTipoDeAlmacenamiento, sCapacidadDeAlmacenamiento, sPantalla, sTipoDeBacteria;
     private boolean boReproduceSonido, boReproduceVideo;
     private byte bAutonomia;
-    private float fPeso, fAncho, fAlto, fGrosor;  
-    private int iCapacidadDeAlmacenamiento;  
+    private float fPeso, fAncho, fAlto, fGrosor;    
 
 
     public ReproductorPortatil(String sMarca, String sModelo, String sTipoDeAlmacenamiento){
@@ -47,13 +46,13 @@ public class ReproductorPortatil implements IReproductorPortatil{
     }
 
     @Override
-    public int getciCapacidadDeAlmacenamiento() {
-        return iCapacidadDeAlmacenamiento;
+    public String getsCapacidadDeAlmacenamiento() {
+        return sCapacidadDeAlmacenamiento;
     }
 
     @Override
-    public void setiCapacidadDeAlmacenamiento(int iCapacidadDeAlmacenamiento) {
-        this.iCapacidadDeAlmacenamiento= iCapacidadDeAlmacenamiento;
+    public void setsCapacidadDeAlmacenamiento(String sCapacidadDeAlmacenamiento) {
+        this.sCapacidadDeAlmacenamiento= sCapacidadDeAlmacenamiento;
 
     }
 
