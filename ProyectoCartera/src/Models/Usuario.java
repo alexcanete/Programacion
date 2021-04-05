@@ -15,10 +15,6 @@ public class Usuario implements IUsuario {
         setsContrasenia(sContrasenia);
     }
 
-
-
-
-
     public String getsNombreUsuario() {
         return this.sNombreUsuario;
     }
@@ -43,6 +39,4 @@ public class Usuario implements IUsuario {
         this.sContrasenia = sContrasenia;
     }
 
-
 }
-`
