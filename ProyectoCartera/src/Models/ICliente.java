@@ -1,7 +1,7 @@
 package Models;
 
 public interface ICliente {
-    public int getsDni();
+    public String getsDni();
 
     public void setsDni(String sDni);
 

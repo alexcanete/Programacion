@@ -7,8 +7,16 @@ public class Cliente implements ICliente{
     private String sApellidos;
     private String sFechaNacimiento;
 
-    public cliente (String sDni){
+    public Cliente (String sDni){
         setsDni(sDni);
+
+    }
+    public Cliente (String sDni, String sNombre, String sApellidos, String sFechaNacimiento, Usuario uIdUsuario){
+        setsDni(sDni);
+        setsNombre(sNombre);
+        setsApellidos(sApellidos);
+        setsFechaNacimiento(sFechaNacimiento);
+        setUIdUsuario(uIdUsuario);
 
     }
 
