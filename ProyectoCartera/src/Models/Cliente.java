@@ -52,17 +52,6 @@ public class Cliente implements ICliente{
         this.sApellidos = sApellidos;
     }
 
-<<<<<<< HEAD
-    public String getsTarjetaCredito() {
-        return this.sTarjetaCredito;
-    }
-
-    public void setsTarjetaCredito(String sTarjetaCredito) {
-        this.sTarjetaCredito = sTarjetaCredito;
-    }
-
-=======
->>>>>>> ProyectoCartera
     public String getsFechaNacimiento() {
         return this.sFechaNacimiento;
     }
@@ -71,10 +60,7 @@ public class Cliente implements ICliente{
         this.sFechaNacimiento = sFechaNacimiento;
     }
 
-<<<<<<< HEAD
-=======
 
 
     
->>>>>>> ProyectoCartera
 }
