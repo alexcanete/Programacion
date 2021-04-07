@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Objects;
+
 public class Usuario implements IUsuario {
     private String sNombreUsuario;
     private String sCorreo;
@@ -38,5 +40,22 @@ public class Usuario implements IUsuario {
     public void setsContrasenia(String sContrasenia) {
         this.sContrasenia = sContrasenia;
     }
+
+    //Importante*****
+    public boolean equals(Object o) {
+        Usuario uUsuario = (Usuario) o;
+        boolean boEquals=false;
+        if (this.getsNombreUsuario().equals(uUsuario.getsNombreUsuario())) {
+            boEquals = true;
+        }
+        return boEquals;
+       
+    }
+
+    
+    public int hashCode() {
+        return Objects.hash(sNombreUsuario);
+    }
+
 
 }

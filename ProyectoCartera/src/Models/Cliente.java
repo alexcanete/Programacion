@@ -1,14 +1,39 @@
 package Models;
 
-public class Cliente implements ICliente {
-    String sDNI, sNombre, sApellidos, sTarjetaCredito, sFechaNacimiento;
+public class Cliente implements ICliente{
+    private Usuario uIdUsuario;
+    private String sDni;
+    private String sNombre;
+    private String sApellidos;
+    private String sFechaNacimiento;
 
-    public String getsDNI() {
-        return this.sDNI;
+    public Cliente (String sDni){
+        setsDni(sDni);
+
+    }
+    public Cliente (String sDni, String sNombre, String sApellidos, String sFechaNacimiento, Usuario uIdUsuario){
+        setsDni(sDni);
+        setsNombre(sNombre);
+        setsApellidos(sApellidos);
+        setsFechaNacimiento(sFechaNacimiento);
+        setUIdUsuario(uIdUsuario);
+
     }
 
-    public void setsDNI(String sDNI) {
-        this.sDNI = sDNI;
+    public Usuario getUIdUsuario() {
+        return this.uIdUsuario;
+    }
+
+    public void setUIdUsuario(Usuario uIdUsuario) {
+        this.uIdUsuario = uIdUsuario;
+    }
+
+    public String getsDni() {
+        return this.sDni;
+    }
+
+    public void setsDni(String sDni) {
+        this.sDni = sDni;
     }
 
     public String getsNombre() {
@@ -27,6 +52,7 @@ public class Cliente implements ICliente {
         this.sApellidos = sApellidos;
     }
 
+<<<<<<< HEAD
     public String getsTarjetaCredito() {
         return this.sTarjetaCredito;
     }
@@ -35,6 +61,8 @@ public class Cliente implements ICliente {
         this.sTarjetaCredito = sTarjetaCredito;
     }
 
+=======
+>>>>>>> ProyectoCartera
     public String getsFechaNacimiento() {
         return this.sFechaNacimiento;
     }
@@ -43,4 +71,10 @@ public class Cliente implements ICliente {
         this.sFechaNacimiento = sFechaNacimiento;
     }
 
+<<<<<<< HEAD
+=======
+
+
+    
+>>>>>>> ProyectoCartera
 }

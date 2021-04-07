@@ -1,24 +1,20 @@
 package Models;
 
 public interface ICliente {
+    public String getsDni();
 
-    public String getsDNI();
-
-    public void setsDNI(String sDNI);
+    public void setsDni(String sDni);
 
     public String getsNombre();
 
-    public void setsNombre(String setsNombre);
+    public void setsNombre(String sNombre);
 
     public String getsApellidos();
 
-    public void setsApellidos(String setsApellidos);
-
-    public String getsTarjetaCredito();
-
-    public void setsTarjetaCredito(String setsTarjetaCredito);
+    public void setsApellidos(String sApellidos);
 
     public String getsFechaNacimiento();
 
-    public void setsFechaNacimiento(String setsFechaNacimiento);
+    public void setsFechaNacimiento(String sFechaNacimiento);
+
 }
