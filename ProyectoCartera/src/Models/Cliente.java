@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Objects;
+
 public class Cliente implements ICliente{
     private Usuario uIdUsuario;
     private String sDni;
@@ -61,6 +63,33 @@ public class Cliente implements ICliente{
     }
 
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " uIdUsuario='" + getUIdUsuario() + "'" +
+            ", sDni='" + getsDni() + "'" +
+            ", sNombre='" + getsNombre() + "'" +
+            ", sApellidos='" + getsApellidos() + "'" +
+            ", sFechaNacimiento='" + getsFechaNacimiento() + "'" +
+            "}";
+    }
+
+   
+
+    public boolean equals(Object o) {
+        Cliente cCliente = (Cliente) o;
+        boolean boEquals=false;
+        if (this.getsDni().equals(cCliente.getsDni())) {
+            boEquals = true;
+        }
+        return boEquals;
+       
+    }
+    
+    public int hashCode() {
+        return Objects.hash(sDni);
+    }
 
     
 }
