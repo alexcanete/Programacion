@@ -7,16 +7,15 @@ public class Billete implements IBillete {
     private String sTipoBillete;
     private String sValorBilleteEU;
 
-
-    public Billete (int iIdBillete){
+    public Billete(int iIdBillete) {
         setiIdBillete(iIdBillete);
     }
-    public Billete(int iIdBillete, String sTipoBillete ,String sValorBillete){
+
+    public Billete(int iIdBillete, String sTipoBillete, String sValorBillete) {
         setiIdBillete(iIdBillete);
         setsTipoBillete(sTipoBillete);
         setsValorBilleteEU(sValorBillete);
     }
-
 
     public int getiIdBillete() {
         return this.iIdBillete;
@@ -42,16 +41,11 @@ public class Billete implements IBillete {
         this.sValorBilleteEU = sValorBilleteEU;
     }
 
-    
     public String toString() {
-        return "{" +
-            " iIdBillete='" + getiIdBillete() + "'" +
-            ", sTipoBillete='" + getsTipoBillete() + "'" +
-            ", sValorBilleteEU='" + getsValorBilleteEU() + "'" +
-            "}";
+        return "{" + " iIdBillete='" + getiIdBillete() + "'" + ", sTipoBillete='" + getsTipoBillete() + "'"
+                + ", sValorBilleteEU='" + getsValorBilleteEU() + "'" + "}";
     }
 
-    
     public boolean equals(Object o) {
         if (o == this)
             return true;
@@ -59,13 +53,12 @@ public class Billete implements IBillete {
             return false;
         }
         Billete billete = (Billete) o;
-        return iIdBillete == billete.iIdBillete && Objects.equals(sTipoBillete, billete.sTipoBillete) && Objects.equals(sValorBilleteEU, billete.sValorBilleteEU);
+        return iIdBillete == billete.iIdBillete && Objects.equals(sTipoBillete, billete.sTipoBillete)
+                && Objects.equals(sValorBilleteEU, billete.sValorBilleteEU);
     }
 
-    
     public int hashCode() {
         return Objects.hash(iIdBillete, sTipoBillete, sValorBilleteEU);
     }
-
 
 }
