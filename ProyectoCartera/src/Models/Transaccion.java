@@ -2,7 +2,7 @@ package Models;
 
 import java.util.Objects;
 
-public class Transaccion {
+public class Transaccion implements ITransaccion{
     private int iIdTransaccion;
     private String sFecha;
 
@@ -46,6 +46,8 @@ public class Transaccion {
     public int hashCode() {
         return Objects.hash(iIdTransaccion);
     }
+
+    
 
 
 

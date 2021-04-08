@@ -7,5 +7,5 @@ public interface ITransaccion {
 
     public String getsFecha();
 
-    public void setFecha(String sFecha);
+    public void setsFecha(String sFecha);
 }
