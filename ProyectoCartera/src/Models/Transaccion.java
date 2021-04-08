@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Transaccion implements ITransaccion{
     private int iIdTransaccion;
     private String sFecha;
+    private Operacion oIdOperacion;
 
     public Transaccion(int iIdTransaccion) {
         setiIdTransaccion(iIdTransaccion);
@@ -14,7 +15,19 @@ public class Transaccion implements ITransaccion{
         setiIdTransaccion(iIdTransaccion);
         setsFecha(sFecha);
     }
+    public Transaccion(int iIdTransaccion, String sFecha, Operacion oIdOperacion){
+        setiIdTransaccion(iIdTransaccion);
+        setsFecha(sFecha);
+        setoIdOperacion(oIdOperacion);
+        
+    }
+    public Operacion getoIdOperacion() {
+        return this.oIdOperacion;
+    }
 
+    public void setoIdOperacion(Operacion oIdOperacion) {
+        this.oIdOperacion = oIdOperacion;
+    }
     public int getiIdTransaccion() {
         return this.iIdTransaccion;
     }
