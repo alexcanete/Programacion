@@ -12,7 +12,7 @@ public class Transaccion {
 
     public Transaccion(int iIdTransaccion, String sFecha) {
         setiIdTransaccion(iIdTransaccion);
-        setSFecha(sFecha);
+        setsFecha(sFecha);
     }
 
     public int getiIdTransaccion() {
@@ -34,31 +34,13 @@ public class Transaccion {
     @Override
     public String toString() {
         return "{" +
-            " iIdTransaccion='" + getIIdTransaccion() + "'" +
-            ", sFecha='" + getSFecha() + "'" +
+            " iIdTransaccion='" + getiIdTransaccion() + "'" +
+            ", sFecha='" + getsFecha() + "'" +
             "}";
     }
 
     
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Transaccion)) {
-            return false;
-        }
-        Transaccion transaccion = (Transaccion) o;
-        return iIdTransaccion == transaccion.iIdTransaccion && Objects.equals(sFecha, transaccion.sFecha);
-    }
-    
-    public boolean equals(Object o) {
-        Transaccion tTransaccion = (Transaccion) o;
-        boolean boEquals=false;
-        if (this.getsDni().equals(cCliente.getsDni())) {
-            boEquals = true;
-        }
-        return boEquals;
-       
-    }
+
 
     
     public int hashCode() {
