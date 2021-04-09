@@ -47,14 +47,13 @@ public class Billete implements IBillete {
     }
 
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Billete)) {
-            return false;
+        Billete bBillete = (Billete) o;
+        boolean boEquals=false;
+        if (this.getiIdBillete()==(bBillete.getiIdBillete())) {
+            boEquals = true;
         }
-        Billete billete = (Billete) o;
-        return iIdBillete == billete.iIdBillete && Objects.equals(sTipoBillete, billete.sTipoBillete)
-                && Objects.equals(sValorBilleteEU, billete.sValorBilleteEU);
+        return boEquals;
+       
     }
 
     public int hashCode() {
