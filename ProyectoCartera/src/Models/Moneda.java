@@ -47,18 +47,18 @@ public class Moneda implements IMoneda {
     }
 
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Moneda)) {
-            return false;
-        }
+        
         Moneda moneda = (Moneda) o;
-        return iIdMoneda == moneda.iIdMoneda && Objects.equals(sTipoMoneda, moneda.sTipoMoneda)
-                && Objects.equals(sValorMonedaEU, moneda.sValorMonedaEU);
+        boolean boEquals=false;
+
+        if (!(this.getiIdMoneda()==moneda.getiIdMoneda())) {
+            boEquals = true;
+        }    
+        return boEquals;
     }
 
     public int hashCode() {
-        return Objects.hash(iIdMoneda, sTipoMoneda, sValorMonedaEU);
+        return Objects.hash(iIdMoneda);
     }
 
 }
