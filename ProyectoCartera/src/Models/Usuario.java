@@ -1,6 +1,7 @@
 package Models;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class Usuario implements IUsuario {
     private String sNombreUsuario;
@@ -22,7 +23,9 @@ public class Usuario implements IUsuario {
     }
 
     public void setsNombreUsuario(String sNombreUsuario) {
-        this.sNombreUsuario = sNombreUsuario;
+        if(sNombreUsuario!=null && !sNombreUsuario.isEmpty() && sNombreUsuario.length() > 3 && sNombreUsuario.length() < 15){
+            this.sNombreUsuario = sNombreUsuario;
+        }
     }
 
     public String getsCorreo() {
@@ -30,7 +33,11 @@ public class Usuario implements IUsuario {
     }
 
     public void setsCorreo(String sCorreo) {
-        this.sCorreo = sCorreo;
+        String Correo = "[^@]+@[^@]+\\.[a-zA-Z]{2,}";
+        if (Pattern.matches(Correo, sCorreo)) {
+            this.sCorreo = sCorreo;
+        }
+
     }
 
     public String getsContrasenia() {
@@ -38,24 +45,25 @@ public class Usuario implements IUsuario {
     }
 
     public void setsContrasenia(String sContrasenia) {
-        this.sContrasenia = sContrasenia;
+        if(sContrasenia != null && !sContrasenia.isEmpty() && sContrasenia.length() > 5 && sContrasenia.length() < 12){
+            this.sContrasenia = sContrasenia;
+        }
     }
+    
 
-    //Importante*****
+    // Importante*****
     public boolean equals(Object o) {
         Usuario uUsuario = (Usuario) o;
-        boolean boEquals=false;
-        if (this.getsNombreUsuario().equals(uUsuario.getsNombreUsuario())) {
+        boolean boEquals = false;
+        if (uUsuario!= null && this.getsNombreUsuario().equals(uUsuario.getsNombreUsuario())) {
             boEquals = true;
         }
         return boEquals;
-       
+
     }
 
-    
     public int hashCode() {
         return Objects.hash(sNombreUsuario);
     }
-
 
 }

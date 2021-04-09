@@ -60,7 +60,7 @@ public class Libreria {
 
 		return aVector;
 	}
-	// matricula
+	// Patrones para validar
 /*
 	public void setsdni(String sDNI) {
         String DNI="[0-9]{7,8}[A-Z a-z]";
@@ -75,6 +75,14 @@ public class Libreria {
             this.sMatricula = sMatricula;
             
         }
+    }
+
+	public void setsCorreo(String sCorreo) {
+        String Correo = "[^@]+@[^@]+\\.[a-zA-Z]{2,}";
+        if (Pattern.matches(Correo, sCorreo)) {
+            this.sCorreo = sCorreo;
+        }
+
     }
 */
 	public static String imprimeVector(int[] aVector) {

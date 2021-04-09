@@ -1,8 +1,9 @@
 import Models.Cliente;
+import Models.Usuario;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Cliente oCliente = new Cliente("12345678b78678");
-        System.out.println(oCliente.getsDni());
+        Usuario oUsuario = new Usuario("juan", "juan@gmail.com","123");
+        System.out.println(oUsuario.getsCorreo());
     }
 }
