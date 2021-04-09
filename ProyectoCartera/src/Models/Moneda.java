@@ -47,13 +47,13 @@ public class Moneda implements IMoneda {
     }
 
     public boolean equals(Object o) {
-        
-        Moneda moneda = (Moneda) o;
-        boolean boEquals=false;
 
-        if (!(this.getiIdMoneda()==moneda.getiIdMoneda())) {
+        Moneda moneda = (Moneda) o;
+        boolean boEquals = false;
+
+        if (!(this.getiIdMoneda() == moneda.getiIdMoneda())) {
             boEquals = true;
-        }    
+        }
         return boEquals;
     }
 

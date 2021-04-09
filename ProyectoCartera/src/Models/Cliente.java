@@ -1,6 +1,7 @@
 package Models;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class Cliente implements ICliente{
     private Usuario uIdUsuario;
@@ -8,6 +9,9 @@ public class Cliente implements ICliente{
     private String sNombre;
     private String sApellidos;
     private String sFechaNacimiento;
+ 
+    
+    
 
     public Cliente (String sDni){
         setsDni(sDni);
@@ -35,9 +39,14 @@ public class Cliente implements ICliente{
     }
 
     public void setsDni(String sDni) {
-        this.sDni = sDni;
-    }
+        
+        String DNI="[0-9]{7,8}[A-Z a-z]";
+		if (Pattern.matches(DNI, sDni)) {
+			this.sDni = sDni;
+		}
+	}
 
+    
     public String getsNombre() {
         return this.sNombre;
     }
@@ -62,6 +71,8 @@ public class Cliente implements ICliente{
         this.sFechaNacimiento = sFechaNacimiento;
     }
 
+
+    
 
 
     @Override

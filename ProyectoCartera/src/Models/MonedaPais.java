@@ -7,7 +7,11 @@ public class MonedaPais {
     private Moneda oIdMoneda;
     private Pais oNombrePais;
 
-
+    public MonedaPais(Operacion oIdOperacion, Moneda oIdMoneda, Pais oNombrePais) {
+        setoIdOperacion(oIdOperacion);
+        setoIdMoneda(oIdMoneda);
+        setoNombrePais(oNombrePais);
+    }
 
     public Operacion getoIdOperacion() {
         return this.oIdOperacion;
@@ -41,12 +45,12 @@ public class MonedaPais {
             return false;
         }
         MonedaPais monedaPais = (MonedaPais) o;
-        return Objects.equals(oIdOperacion, monedaPais.oIdOperacion) && Objects.equals(oIdMoneda, monedaPais.oIdMoneda) && Objects.equals(oNombrePais, monedaPais.oNombrePais);
+        return Objects.equals(oIdOperacion, monedaPais.oIdOperacion) && Objects.equals(oIdMoneda, monedaPais.oIdMoneda)
+                && Objects.equals(oNombrePais, monedaPais.oNombrePais);
     }
-
 
     public int hashCode() {
         return Objects.hash(oIdOperacion, oIdMoneda, oNombrePais);
     }
-    
+
 }
