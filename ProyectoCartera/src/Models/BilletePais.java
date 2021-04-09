@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class BilletePais {
     private Operacion oIdOperacion;
-    private Billete oIdBillete;
-    private Pais oNombrePais;
+    private Billete bIdBillete;
+    private Pais pNombrePais;
 
-    public BilletePais(Operacion oIdOperacion, Billete oIdBillete, Pais oNombrePais){
+    public BilletePais(Operacion oIdOperacion, Billete bIdBillete, Pais pNombrePais){
         setoIdOperacion(oIdOperacion);
-        setoIdBillete(oIdBillete);
-        setoNombrePais(oNombrePais);
+        setbIdBillete(bIdBillete);
+        setpNombrePais(pNombrePais);
     }
 
 
@@ -23,42 +23,42 @@ public class BilletePais {
     }
 
     public Billete getoIdBillete() {
-        return this.oIdBillete;
+        return this.bIdBillete;
     }
 
-    public void setoIdBillete(Billete oIdBillete) {
-        this.oIdBillete = oIdBillete;
+    public void setbIdBillete(Billete bIdBillete) {
+        this.bIdBillete = bIdBillete;
     }
 
     public Pais getoNombrePais() {
-        return this.oNombrePais;
+        return this.pNombrePais;
     }
 
-    public void setoNombrePais(Pais oNombrePais) {
-        this.oNombrePais = oNombrePais;
+    public void setpNombrePais(Pais pNombrePais) {
+        this.pNombrePais = pNombrePais;
     }
 
        public String toString() {
         return "{" +
             " oIdOperacion='" + getoIdOperacion() + "'" +
-            ", oIdBillete='" + getoIdBillete() + "'" +
-            ", oNombrePais='" + getoNombrePais() + "'" +
+            ", bIdBillete='" + getoIdBillete() + "'" +
+            ", pNombrePais='" + getoNombrePais() + "'" +
             "}";
     }
 
     
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof BilletePais)) {
-            return false;
+        boolean boEquals = false;
+        if (this.oIdOperacion != null && this.bIdBillete!= null&& this.pNombrePais!= null && oIdOperacion.equals(o) && bIdBillete.equals(o) && pNombrePais.equals(o)) {
+            boEquals = true;
+
         }
-        BilletePais billetePais = (BilletePais) o;
-        return Objects.equals(oIdOperacion, billetePais.oIdOperacion) && Objects.equals(oIdBillete, billetePais.oIdBillete) && Objects.equals(oNombrePais, billetePais.oNombrePais);
+        return boEquals;
+
     }
 
     public int hashCode() {
-        return Objects.hash(oIdOperacion, oIdBillete, oNombrePais);
+        return Objects.hash(oIdOperacion, bIdBillete, pNombrePais);
     }
 
 

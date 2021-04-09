@@ -18,13 +18,13 @@ public class Pais {
     }
 
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Pais)) {
-            return false;
+        Pais pPais = (Pais) o;
+        boolean boEquals = false;
+        if (pPais!= null && this.getsNombrePais().equals(pPais.getsNombrePais())) {
+            boEquals = true;
         }
-        Pais pais = (Pais) o;
-        return Objects.equals(sNombrePais, pais.sNombrePais);
+        return boEquals;
+
     }
 
     public int hashCode() {

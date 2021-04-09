@@ -74,5 +74,15 @@ public class Billetera {
         return Objects.hash(iIdBilletera);
     }
 
+    
 
+    public boolean equals(Object o) {
+        Billetera bBilletera = (Billetera) o;
+        boolean boEquals=false;
+        if (this.getiIdBilletera()==(bBilletera.getiIdBilletera())) {
+            boEquals = true;
+        }
+        return boEquals;
+       
+    }
 }

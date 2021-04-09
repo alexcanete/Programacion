@@ -37,13 +37,13 @@ public class Operacion {
     }
 
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Operacion)) {
-            return false;
+        Operacion oOperacion = (Operacion) o;
+        boolean boEquals = false;
+        if (oOperacion != null && this.getiIdOperacion()==(oOperacion.getiIdOperacion())) {
+            boEquals = true;
         }
-        Operacion operacion = (Operacion) o;
-        return iIdOperacion == operacion.iIdOperacion && boTipoOperacion == operacion.boTipoOperacion;
+        return boEquals;
+
     }
 
     public int hashCode() {

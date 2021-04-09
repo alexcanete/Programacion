@@ -48,10 +48,19 @@ public class Transaccion implements ITransaccion{
     public String toString() {
         return "{" +
             " iIdTransaccion='" + getiIdTransaccion() + "'" +
-            ", sFecha='" + getsFecha() + "'" +
+            ", sFecha='" + getsFecha() + "/" +
             "}";
     }
+    public boolean equals(Object o) {
+        Transaccion tTransaccion = (Transaccion) o;
+        boolean boEquals = false;
+        if (tTransaccion!= null && this.getiIdTransaccion()==(tTransaccion.getiIdTransaccion())) {
+            boEquals = true;
+        }
+        return boEquals;
 
+    }
+    
     
 
 

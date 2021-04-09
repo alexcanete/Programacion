@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class MonedaPais {
     private Operacion oIdOperacion;
-    private Moneda oIdMoneda;
-    private Pais oNombrePais;
+    private Moneda mIdMoneda;
+    private Pais pNombrePais;
 
-    public MonedaPais(Operacion oIdOperacion, Moneda oIdMoneda, Pais oNombrePais) {
+    public MonedaPais(Operacion oIdOperacion, Moneda mIdMoneda, Pais pNombrePais) {
         setoIdOperacion(oIdOperacion);
-        setoIdMoneda(oIdMoneda);
-        setoNombrePais(oNombrePais);
+        setmIdMoneda(mIdMoneda);
+        setpNombrePais(pNombrePais);
     }
 
     public Operacion getoIdOperacion() {
@@ -21,36 +21,46 @@ public class MonedaPais {
         this.oIdOperacion = oIdOperacion;
     }
 
-    public Moneda getoIdMoneda() {
-        return this.oIdMoneda;
+    public Moneda getmIdMoneda() {
+        return this.mIdMoneda;
     }
 
-    public void setoIdMoneda(Moneda oIdMoneda) {
-        this.oIdMoneda = oIdMoneda;
+    public void setmIdMoneda(Moneda mIdMoneda) {
+        this.mIdMoneda = mIdMoneda;
     }
 
-    public Pais getoNombrePais() {
-        return this.oNombrePais;
+    public Pais getpNombrePais() {
+        return this.pNombrePais;
     }
 
-    public void setoNombrePais(Pais oNombrePais) {
-        this.oNombrePais = oNombrePais;
+    public void setpNombrePais(Pais pNombrePais) {
+        this.pNombrePais = pNombrePais;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof MonedaPais)) {
-            return false;
+        boolean boEquals = false;
+        if (this.oIdOperacion != null && this.mIdMoneda!= null&& this.pNombrePais!= null && oIdOperacion.equals(o) && mIdMoneda.equals(o) && pNombrePais.equals(o)) {
+            boEquals = true;
+
         }
-        MonedaPais monedaPais = (MonedaPais) o;
-        return Objects.equals(oIdOperacion, monedaPais.oIdOperacion) && Objects.equals(oIdMoneda, monedaPais.oIdMoneda)
-                && Objects.equals(oNombrePais, monedaPais.oNombrePais);
+        return boEquals;
+
     }
 
     public int hashCode() {
-        return Objects.hash(oIdOperacion, oIdMoneda, oNombrePais);
+        return Objects.hash(oIdOperacion, mIdMoneda, pNombrePais);
     }
+
+
+    
+    public String toString() {
+        return "{" +
+            " oIdOperacion='" + getoIdOperacion() + "'" +
+            ", mIdMoneda='" + getmIdMoneda() + "'" +
+            ", pNombrePais='" + getpNombrePais() + "'" +
+            "}";
+    }
+
 
 }
