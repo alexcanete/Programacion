@@ -3,26 +3,16 @@ package Models;
 import java.util.Objects;
 
 public class Billete implements IBillete {
-    private int iIdBillete;
     private String sTipoBillete;
     private String sValorBilleteEU;
 
-    public Billete(int iIdBillete) {
-        setiIdBillete(iIdBillete);
+    public Billete(String sTipoBillete) {
+        setsTipoBillete(sTipoBillete);
     }
 
     public Billete(int iIdBillete, String sTipoBillete, String sValorBillete) {
-        setiIdBillete(iIdBillete);
         setsTipoBillete(sTipoBillete);
         setsValorBilleteEU(sValorBillete);
-    }
-
-    public int getiIdBillete() {
-        return this.iIdBillete;
-    }
-
-    public void setiIdBillete(int iIdBillete) {
-        this.iIdBillete = iIdBillete;
     }
 
     public String getsTipoBillete() {
@@ -42,22 +32,22 @@ public class Billete implements IBillete {
     }
 
     public String toString() {
-        return "{" + " iIdBillete='" + getiIdBillete() + "'" + ", sTipoBillete='" + getsTipoBillete() + "'"
-                + ", sValorBilleteEU='" + getsValorBilleteEU() + "'" + "}";
+        return "{" + ", sTipoBillete='" + getsTipoBillete() + "'" + ", sValorBilleteEU='" + getsValorBilleteEU() + "'"
+                + "}";
     }
 
     public boolean equals(Object o) {
         Billete bBillete = (Billete) o;
-        boolean boEquals=false;
-        if (this.getiIdBillete()==(bBillete.getiIdBillete())) {
+        boolean boEquals = false;
+        if (this.getsTipoBillete() == (bBillete.getsTipoBillete())) {
             boEquals = true;
         }
         return boEquals;
-       
+
     }
 
     public int hashCode() {
-        return Objects.hash(iIdBillete, sTipoBillete, sValorBilleteEU);
+        return Objects.hash(sTipoBillete, sValorBilleteEU);
     }
 
 }

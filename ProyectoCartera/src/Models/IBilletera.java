@@ -2,9 +2,9 @@ package Models;
 
 public interface IBilletera {
 
-    public int getiIdBilletera();
+    public String getsNombreBilletera();
 
-    public void setiIdBilletera(int iIdBilletera);
+    public void setsNombreBilletera(String sNombreBilletera);
 
     public int getiSaldoActual();
 

@@ -1,9 +1,6 @@
 package Models;
 
 public interface IMoneda {
-    public int getiIdMoneda();
-
-    public void setiIdMoneda(int iIdMoneda);
 
     public String getsTipoMoneda();
 

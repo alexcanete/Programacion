@@ -3,26 +3,16 @@ package Models;
 import java.util.Objects;
 
 public class Moneda implements IMoneda {
-    private int iIdMoneda;
     private String sTipoMoneda;
     private String sValorMonedaEU;
 
-    public Moneda(int iIdMoneda) {
-        setiIdMoneda(iIdMoneda);
+    public Moneda(String sTipoMoneda) {
+        setsTipoMoneda(sTipoMoneda);
     }
 
-    public Moneda(int iIdMoneda, String sTipoMoneda, String sValorMonedaEU) {
-        setiIdMoneda(iIdMoneda);
+    public Moneda(String sTipoMoneda, String sValorMonedaEU) {
         setsTipoMoneda(sTipoMoneda);
         setsValorMonedaEU(sValorMonedaEU);
-    }
-
-    public int getiIdMoneda() {
-        return this.iIdMoneda;
-    }
-
-    public void setiIdMoneda(int iIdMoneda) {
-        this.iIdMoneda = iIdMoneda;
     }
 
     public String getsTipoMoneda() {
@@ -42,7 +32,7 @@ public class Moneda implements IMoneda {
     }
 
     public String toString() {
-        return "{" + " iIdMoneda='" + getiIdMoneda() + "'" + ", sTipoMoneda='" + getsTipoMoneda() + "'"
+        return "{" + ", sTipoMoneda='" + getsTipoMoneda() + "'"
                 + ", sValorMonedaEU='" + getsValorMonedaEU() + "'" + "}";
     }
 
@@ -51,14 +41,14 @@ public class Moneda implements IMoneda {
         Moneda moneda = (Moneda) o;
         boolean boEquals = false;
 
-        if (!(this.getiIdMoneda() == moneda.getiIdMoneda())) {
+        if (!(this.getsTipoMoneda() == moneda.getsTipoMoneda())) {
             boEquals = true;
         }
         return boEquals;
     }
 
     public int hashCode() {
-        return Objects.hash(iIdMoneda);
+        return Objects.hash(sTipoMoneda);
     }
 
 }

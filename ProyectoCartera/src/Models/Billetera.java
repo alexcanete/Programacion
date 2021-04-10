@@ -4,23 +4,23 @@ import java.util.Objects;
 
 public class Billetera {
     
-    private int iIdBilletera;
+    private String sNombreBilletera;
     private int iSaldoActual;
     private Transaccion tTransaccionId;
     private Billetera bBilleteraId;
     private Cliente cClienteId;
 
 
-    public Billetera(int iIdBilletera){
-        setiIdBilletera(iIdBilletera);
+    public Billetera(String sNombreBilletera){
+        setsNombreBilletera(sNombreBilletera);
     }
 
-    public int getiIdBilletera() {
-        return this.iIdBilletera;
+    public String getsNombreBilletera() {
+        return this.sNombreBilletera;
     }
 
-    public void setiIdBilletera(int iIdBilletera) {
-        this.iIdBilletera = iIdBilletera;
+    public void setsNombreBilletera(String sNombreBilletera) {
+        this.sNombreBilletera = sNombreBilletera;
     }
 
     public int getiSaldoActual() {
@@ -59,7 +59,7 @@ public class Billetera {
     
     public String toString() {
         return "{" +
-            " iIdBilletera='" + getiIdBilletera() + "'" +
+            " sNombreBilletera='" + getsNombreBilletera() + "'" +
             ", iSaldoActual='" + getiSaldoActual() + "'" +
             ", tTransaccionId='" + gettTransaccionId() + "'" +
             ", bBilleteraId='" + getbBilleteraId() + "'" +
@@ -71,7 +71,7 @@ public class Billetera {
 
     
     public int hashCode() {
-        return Objects.hash(iIdBilletera);
+        return Objects.hash(sNombreBilletera);
     }
 
     
@@ -79,7 +79,7 @@ public class Billetera {
     public boolean equals(Object o) {
         Billetera bBilletera = (Billetera) o;
         boolean boEquals=false;
-        if (this.getiIdBilletera()==(bBilletera.getiIdBilletera())) {
+        if (this.getsNombreBilletera()==(bBilletera.getsNombreBilletera())) {
             boEquals = true;
         }
         return boEquals;
