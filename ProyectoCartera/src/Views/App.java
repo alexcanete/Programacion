@@ -14,8 +14,8 @@ public class App {
 				bOpcion = menu();
 
 				switch (bOpcion) {
-				case 1: // Gestion de clientes
-				
+				case 1: //Gestion de clientes
+                    ClienteView.gestionClientes(oCtrl);
 					break;
 				default:
 					System.out.println("Hasta luego.");

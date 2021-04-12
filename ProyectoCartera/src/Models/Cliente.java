@@ -102,5 +102,14 @@ public class Cliente implements ICliente{
         return Objects.hash(sDni);
     }
 
+    public boolean checkCliente() {
+		boolean bExito = false;
+		if (this.getsDni() != null && this.getsNombre() != null && this.getsApellidos() != null
+				&& this.getUIdUsuario() != null && this.getUIdUsuario().checkUsuario()) {
+			bExito = true;
+		}
+		return bExito;
+	}
+
     
 }

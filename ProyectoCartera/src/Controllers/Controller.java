@@ -3,15 +3,18 @@ package Controllers;
 
 import java.sql.*;
 import java.util.*;
+
+import Models.Cliente;
+
 import java.io.*;
 
 public class Controller implements IController{
 	
-	//private PersonasController oPersonasCtrl;
+	private PersonasController oPersonasCtrl;
 	private Connection oConnection;
 
 	public Controller() {
-	//	oPersonasCtrl = new PersonasController();
+	oPersonasCtrl = new PersonasController();
 	}
 
 	public Connection getConnection() {
@@ -56,7 +59,7 @@ public class Controller implements IController{
 		while ((linea = br.readLine()) != null) {
 			linea = linea.replaceAll(" ", "");
 			String sParam = linea.substring(0, linea.indexOf(":"));
-			String sValue = linea.substring(linea.indexOf(":") + 1, linea.length());
+			String sValue = linea.substring((linea.indexOf(":") + 1, linea.length());
 			mapProperties.put(sParam, sValue);
 		}
 		return mapProperties;
@@ -80,7 +83,7 @@ public class Controller implements IController{
 
 		return conn;
 	}
-/*
+
 	public boolean addCliente(Cliente oCliente) {
 		return oPersonasCtrl.addCliente(oCliente, oConnection);
 	}

@@ -66,4 +66,11 @@ public class Usuario implements IUsuario {
         return Objects.hash(sNombreUsuario);
     }
 
+    public boolean checkUsuario() {
+		boolean bExito = false;
+		if (this.getsCorreo() != null && this.getsContrasenia() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
 }
