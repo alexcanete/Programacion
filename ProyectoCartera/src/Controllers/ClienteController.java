@@ -175,7 +175,7 @@ public class ClienteController {
         return oClienteResult;
     }
 
-    public List<Cliente> searchByDireccion(String sDireccion, Connection oConnection) {
+    /*public List<Cliente> searchByDireccion(String sDireccion, Connection oConnection) {
         List<Cliente> oListaClientes = new ArrayList<Cliente>();
         String sSQL = "SELECT sDni, sNombre, sApellidos FROM Cliente WHERE sDireccion = '" + sDireccion + "'";
 
@@ -194,5 +194,5 @@ public class ClienteController {
         }
 
         return oListaClientes;
-    }
+    }*/
 }

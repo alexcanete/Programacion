@@ -21,9 +21,9 @@ public class Controller implements IController{
 		return oConnection;
 	}
 
-	/*public PersonasController getoPersonasCtrl() {
+	public PersonasController getoPersonasCtrl() {
 		return oPersonasCtrl;
-	}*/
+	}*/¡
 
 	/*
 	 * # DB METHODS
