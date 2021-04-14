@@ -5,8 +5,9 @@ import java.util.List;
 import Controllers.Controller;
 import Models.Cliente;
 import Models.Usuario;
+
 public class ClienteView {
-    public static byte subMenuClientes() {
+	public static byte subMenuClientes() {
 		System.out.println("");
 		System.out.println("-----------------------");
 		System.out.println("Gestion de clientes");
@@ -66,7 +67,7 @@ public class ClienteView {
 		case 6: // Mostrar contraseña por DNI
 			Usuario oUser = searchUserByDni(oCtrl);
 			if (oUser != null) {
-				System.out.println("Contraseña: " + oUser.getsContrasenia());
+				System.out.println("Contraseña: " + oUser.getsPassword());
 			} else {
 				System.out.println("No existen clientes con ese DNI.");
 			}
@@ -93,7 +94,8 @@ public class ClienteView {
 		sEmail = String.valueOf(Libreria.leer("Introduce un email", 1, 250, -1, -1, (byte) 6));
 		sPass = String.valueOf(Libreria.leer("Introduce una contrasena", 5, 12, -1, -1, (byte) 6));
 
-		return oCtrl.addCliente(new Cliente(sDni));
+		return oCtrl.addCliente(new Cliente(sDni, sNombre, sApellidos, sDireccion, sNumeroDireccion, sTelefono,
+				new Usuario(sEmail, sPass), sTarjeta));
 	}
 
 	private static boolean update(Controller oCtrl) {

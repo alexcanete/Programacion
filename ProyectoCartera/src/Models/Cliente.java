@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Cliente implements ICliente{
-    private Usuario uIdUsuario;
+    private Usuario uUsuario;
     private String sDni;
     private String sNombre;
     private String sApellidos;
@@ -17,21 +17,21 @@ public class Cliente implements ICliente{
         setsDni(sDni);
 
     }
-    public Cliente (String sDni, String sNombre, String sApellidos, String sFechaNacimiento, Usuario uIdUsuario){
+    public Cliente (String sDni, String sNombre, String sApellidos, String sFechaNacimiento, Usuario uUsuario){
         setsDni(sDni);
         setsNombre(sNombre);
         setsApellidos(sApellidos);
         setsFechaNacimiento(sFechaNacimiento);
-        setUIdUsuario(uIdUsuario);
+        setuUsuario(uUsuario);
 
     }
 
-    public Usuario getUIdUsuario() {
-        return this.uIdUsuario;
+    public Usuario getuUsuario() {
+        return this.uUsuario;
     }
 
-    public void setUIdUsuario(Usuario uIdUsuario) {
-        this.uIdUsuario = uIdUsuario;
+    public void setuUsuario(Usuario uUsuario) {
+        this.uUsuario = uUsuario;
     }
 
     public String getsDni() {
@@ -78,7 +78,7 @@ public class Cliente implements ICliente{
     @Override
     public String toString() {
         return "{" +
-            " uIdUsuario='" + getUIdUsuario() + "'" +
+            " uUsuario='" + getuUsuario() + "'" +
             ", sDni='" + getsDni() + "'" +
             ", sNombre='" + getsNombre() + "'" +
             ", sApellidos='" + getsApellidos() + "'" +
@@ -105,7 +105,7 @@ public class Cliente implements ICliente{
     public boolean checkCliente() {
 		boolean bExito = false;
 		if (this.getsDni() != null && this.getsNombre() != null && this.getsApellidos() != null
-				&& this.getUIdUsuario() != null && this.getUIdUsuario().checkUsuario()) {
+				&& this.getuUsuario() != null && this.getuUsuario().checkUsuario()) {
 			bExito = true;
 		}
 		return bExito;

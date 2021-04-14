@@ -69,6 +69,7 @@ public class ClienteController {
         return bExito;
     }
 
+    
     public boolean remove(Cliente oCliente, Connection oConnection) {
         boolean bExito = false;
         if (oCliente != null && oCliente.getsDni() != null) {
@@ -152,47 +153,6 @@ public class ClienteController {
         return this.getLista();
     }
 
-    public Cliente searchByPk(Cliente oCliente, Connection oConnection) {
-        Cliente oClienteResult = null;
-        String sSQL = "SELECT * FROM Cliente WHERE sDni = '" + oCliente.getsDni() + "'";
-
-        try {
-            Statement stmt = oConnection.createStatement();
-            ResultSet rs = stmt.executeQuery(sSQL);
-            if (rs.next()) {
-                oClienteResult = new Cliente(oCliente.getsDni());
-                oClienteResult.setsNombre(rs.getString(2));
-                oClienteResult.setsApellidos(rs.getString(3));
-                oClienteResult.setsDni(rs.getString(4));
-                oClienteResult.setsFechaNacimiento(rs.getString(5));
-
-            }
-            stmt.close();
-        } catch (SQLException e) {
-            oClienteResult = null;
-        }
-
-        return oClienteResult;
-    }
-
-    /*public List<Cliente> searchByDireccion(String sDireccion, Connection oConnection) {
-        List<Cliente> oListaClientes = new ArrayList<Cliente>();
-        String sSQL = "SELECT sDni, sNombre, sApellidos FROM Cliente WHERE sDireccion = '" + sDireccion + "'";
-
-        try {
-            Statement stmt = oConnection.createStatement();
-            ResultSet rs = stmt.executeQuery(sSQL);
-            while (rs.next()) {
-                Cliente oClienteResult = new Cliente(rs.getString(1));
-                oClienteResult.setsNombre(rs.getString(2));
-                oClienteResult.setsApellidos(rs.getString(3));
-                oListaClientes.add(oClienteResult);
-            }
-            stmt.close();
-        } catch (SQLException e) {
-            oListaClientes = null;
-        }
-
-        return oListaClientes;
-    }*/
+    
+    
 }
