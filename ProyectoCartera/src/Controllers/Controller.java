@@ -23,7 +23,7 @@ public class Controller implements IController{
 
 	public PersonasController getoPersonasCtrl() {
 		return oPersonasCtrl;
-	}*/¡
+	}
 
 	/*
 	 * # DB METHODS
@@ -108,5 +108,5 @@ public class Controller implements IController{
 		return oPersonasCtrl.searchUserByDni(oCliente, oConnection);
 	}
 
-*/	
+
 }
