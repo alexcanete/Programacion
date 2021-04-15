@@ -36,6 +36,7 @@ public class ClienteController {
 				CallableStatement statement = oConnection.prepareCall("{call cliente_create(?)}");
 				statement.setString(1, json);
 
+                System.out.println(json);//prueba (borrar)
 				statement.execute();
 				statement.close();
 
