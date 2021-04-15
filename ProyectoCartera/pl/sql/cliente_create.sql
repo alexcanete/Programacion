@@ -1,4 +1,3 @@
-DROP PROCEDURE IF EXISTS `cliente_create`;
 DELIMITER $$
 CREATE PROCEDURE `cliente_create` (
 	IN oObject JSON
@@ -12,7 +11,8 @@ BEGIN
     DECLARE sDniParam VARCHAR(9);
     DECLARE sNombreParam VARCHAR(255);
     DECLARE sApellidosParam VARCHAR(255);    
-    DECLARE sFechaNacimiento VARCHAR(255);    
+    DECLARE sFechaNacimiento VARCHAR(255);  
+    DECLARE vValido INT;
 	
     SET vValido = 0;
     SET vJsonIsValid = JSON_VALID(oObject);
@@ -33,9 +33,9 @@ BEGIN
                 SET sFechaNacimiento = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sFechaNacimiento')));
                 
                 
-                CALL usuario_create(JSON_ARRAY(JSON_OBJECT("sEmail", `sEmailParam`, "sPassword", `sPasswordParam`)));
+                CALL usuario_create(JSON_ARRAY(JSON_OBJECT("sCorreo", `sCorreoParam`, "sContrasenia", `sContraseniaParam`)));
                 
-                INSERT INTO Cliente VALUES (`sDniParam`, `sNombreParam`, `sApellidosParam`, `sDireccionParam`, `sTelefonoParam`, `sEmailParam`, `sNumeroDireccionParam`);
+                INSERT INTO Cliente VALUES (`sDniParam`, `sNombreParam`, `sApellidosParam`, `sFechaNacimiento`);
                   
                 SET vIndex = vIndex + 1;
             END WHILE;

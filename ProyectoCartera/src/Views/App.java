@@ -1,8 +1,7 @@
 package Views;
 
 import Controllers.Controller;
-import Models.Cliente;
-import Models.Usuario;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
