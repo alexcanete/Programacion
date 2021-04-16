@@ -1,4 +1,6 @@
-CREATE PROCEDURE usuario_create (
+DROP PROCEDURE IF EXISTS `usuario_create`;
+DELIMITER $$
+CREATE PROCEDURE `usuario_create` (
 	IN oObject JSON
 )
 BEGIN
@@ -9,11 +11,10 @@ BEGIN
     DECLARE vValido INT;
     
     # Variables para parseo del objeto JSON
-    DECLARE SNombreUsuarioParam VARCHAR(250);
-    DECLARE sCorreoParam VARCHAR(250);
-    DECLARE sContraseniaPanam VARCHAR(12);
-    
-	
+    DECLARE sNombreUsuarioParam VARCHAR(255);
+    DECLARE sCorreoParam VARCHAR(255);
+    DECLARE sContraseniaPanam VARCHAR(255);
+    	
     SET vJsonIsValid = JSON_VALID(oObject);
     SET vValido = 0;
     
@@ -27,11 +28,11 @@ BEGIN
 			
             WHILE vIndex < vItems DO
 				
-                SET SNombreUsuarioParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sNombreUsuario')));
+                SET sNombreUsuarioParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sNombreUsuario')));
                 SET sCorreoParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sCorreo')));
-                SET sPasswordParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sContrasenia')));
+                SET sContraseniaPanam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sContrasenia')));
                 
-                INSERT INTO Usuario VALUES ('sNombreUsuarioParam', 'sCorreoParam', 'sContraseniaParam');
+                INSERT INTO USUARIO VALUES (`sNombreUsuarioParam`, `sCorreoParam`, `sContraseniaPanam`);
                 SET vIndex = vIndex + 1;    
                 
             END WHILE;            
@@ -40,5 +41,5 @@ BEGIN
     END IF;
     
     SELECT vValido;
-    
-END usuario_create;
+END $$
+DELIMITER ;

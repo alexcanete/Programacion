@@ -10,7 +10,9 @@ public class App {
 
 		if (oCtrl.init()) {
 			do {
+				
 				bOpcion = menu();
+				
 
 				switch (bOpcion) {
 				case 1: //Gestion de clientes
@@ -36,6 +38,12 @@ public class App {
         System.out.println("  Y8.   .88 88.  .88 88         88   88.  ... 88       88.  .88  .d88b.  ");
         System.out.println("   Y88888P' `88888P8 dP         dP   `88888P' dP       `88888P' dP'  `dP ");
         System.out.println("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("-------------------------");
+		System.out.println("1.	Gestión de clientes");
+		System.out.println("2.	Salir");
+		System.out.println("-------------------------");
 		return (byte) Libreria.leer("Introduce una opcion", 1, 2, -1, -1, (byte) 1);
     }
 

@@ -1,3 +1,4 @@
+DROP PROCEDURE IF EXISTS `cliente_create`;
 DELIMITER $$
 CREATE PROCEDURE `cliente_create` (
 	IN oObject JSON
@@ -8,10 +9,13 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE sDniParam VARCHAR(9);
+    DECLARE sDniParam VARCHAR(255);
     DECLARE sNombreParam VARCHAR(255);
     DECLARE sApellidosParam VARCHAR(255);    
     DECLARE sFechaNacimiento VARCHAR(255);  
+    DECLARE sNombreUsuarioParam VARCHAR(255);
+    DECLARE sCorreoParam VARCHAR(255);
+    DECLARE sContraseniaPanam VARCHAR(255);
     DECLARE vValido INT;
 	
     SET vValido = 0;
@@ -31,11 +35,13 @@ BEGIN
                 SET sNombreParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sNombre')));
                 SET sApellidosParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sApellidos')));
                 SET sFechaNacimiento = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sFechaNacimiento')));
+                SET sNombreUsuarioParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].uUsuario.sNombreUsuario')));
+                SET sCorreoParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].uUsuario.sCorreo')));
+                SET sContraseniaPanam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].uUsuario.sContrasenia')));
+                                
+                CALL usuario_create(JSON_ARRAY(JSON_OBJECT("sNombreUsuario",`sNombreUsuarioParam`,"sCorreo", `sCorreoParam`, "sContrasenia", `sContraseniaPanam`)));
                 
-                
-                CALL usuario_create(JSON_ARRAY(JSON_OBJECT("sCorreo", `sCorreoParam`, "sContrasenia", `sContraseniaParam`)));
-                
-                INSERT INTO Cliente VALUES (`sDniParam`, `sNombreParam`, `sApellidosParam`, `sFechaNacimiento`);
+                INSERT INTO CLIENTE VALUES (`sDniParam`, `sNombreParam`, `sApellidosParam`, `sFechaNacimiento`,`sNombreUsuarioParam`);
                   
                 SET vIndex = vIndex + 1;
             END WHILE;
@@ -48,3 +54,5 @@ BEGIN
     
 END $$
 DELIMITER ;
+
+CALL cliente_create('[{"uUsuario":{"sNombreUsuario":"aurelio","sCorreo":"aurelio@lopez.com","sContrasenia":"1234567"},"sDni":"12345678A","sNombre":"Aurelio","sApellidos":"Lopez","sFechaNacimiento":""}]');

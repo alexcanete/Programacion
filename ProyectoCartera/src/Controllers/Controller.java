@@ -61,6 +61,7 @@ public class Controller implements IController {
 			String sValue = linea.substring(linea.indexOf(":") + 1, linea.length());
 			mapProperties.put(sParam, sValue);
 		}
+		br.close();
 		return mapProperties;
 	}
 
