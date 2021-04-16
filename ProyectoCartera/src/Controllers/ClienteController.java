@@ -53,7 +53,7 @@ public class ClienteController {
     public boolean remove(Cliente oCliente, Connection oConnection) {
         boolean bExito = false;
         if (oCliente != null && oCliente.getsDni() != null) {
-
+            
             try {
                 Statement stmt = oConnection.createStatement();
 
@@ -75,7 +75,6 @@ public class ClienteController {
         return bExito;
 
     }
-
     public boolean update(Cliente oCliente, Connection oConnection) {
         boolean bExito = false;
         if (oCliente != null && oCliente.checkCliente()) {

@@ -10,7 +10,7 @@ public class Billete implements IBillete {
         setsTipoBillete(sTipoBillete);
     }
 
-    public Billete(int iIdBillete, String sTipoBillete, String sValorBillete) {
+    public Billete(String sTipoBillete, String sValorBillete) {
         setsTipoBillete(sTipoBillete);
         setsValorBilleteEU(sValorBillete);
     }
