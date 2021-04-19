@@ -100,4 +100,8 @@ public class Controller implements IController {
 		return oPersonasCtrl.searchCliente(oCliente, oConnection);
 	}
 
+	public Cliente searchSalario(Cliente oCliente) {
+
+	}
+
 }

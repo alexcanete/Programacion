@@ -45,11 +45,12 @@ public class ClienteController {
 			} catch (SQLException ex) {
 				bExito = false;
 			}
+            
 		}
 		return bExito;
     }
 
-    
+
     public boolean remove(Cliente oCliente, Connection oConnection) {
         boolean bExito = false;
         if (oCliente != null && oCliente.getsDni() != null) {

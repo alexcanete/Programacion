@@ -1,4 +1,7 @@
 package Views;
+import Controllers.Controller;
+import Models.Cliente;
+import Models.Usuario;
 
 
 
@@ -14,7 +17,7 @@ public class ConsultaView {
     }
 
     public static void Consultas () {
-		switch (ClienteView.subMenuClientes()) {
+		switch (ConsultaView subMenuConsulta(Controller oCtrl)) {
 		case 1: // Alta de cliente
 			if (create(oCtrl)) {
 				System.out.println("El cliente ha sido creado con exito.");
@@ -22,4 +25,9 @@ public class ConsultaView {
 				System.out.println("El cliente no se ha podido crear.");
 			}
 			break;
-}
+		
+		}
+		
+	}
+}		
+
