@@ -10,6 +10,7 @@ import java.io.*;
 public class Controller implements IController {
 
 	private PersonasController oPersonasCtrl;
+	private ClienteController oClienteCtrl;
 	private Connection oConnection;
 
 	public Controller() {
