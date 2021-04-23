@@ -18,6 +18,11 @@ public class App {
 				case 1: //Gestion de clientes
                     ClienteView.gestionClientes(oCtrl);
 					break;
+
+				case 2://Conslta
+					ConsultaView.Consultas(oCtrl);
+					break;
+					
 				default:
 					System.out.println("Hasta luego.");
 				}
@@ -42,9 +47,10 @@ public class App {
 		System.out.println("");
 		System.out.println("-------------------------");
 		System.out.println("1.	Gestión de clientes");
-		System.out.println("2.	Salir");
+		System.out.println("2.	Consultas");
+		System.out.println("3.	Salir");
 		System.out.println("-------------------------");
-		return (byte) Libreria.leer("Introduce una opcion", 1, 2, -1, -1, (byte) 1);
+		return (byte) Libreria.leer("Introduce una opcion", 1, 3, -1, -1, (byte) 1);
     }
 
 	

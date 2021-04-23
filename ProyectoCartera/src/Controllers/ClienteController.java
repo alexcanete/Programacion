@@ -133,27 +133,35 @@ public class ClienteController {
         return this.getLista();
     }
 
+
     public Cliente searchByPk(Cliente oCliente, Connection oConnection) {
 		Cliente oClienteResult = null;
-		String sSQL = "SELECT * FROM Cliente WHERE sDni = '" + oCliente.getsDni() + "'";
+		if (oCliente != null && oCliente.getsDni() != null) {
 
-		try {
-			Statement stmt = oConnection.createStatement();
-			ResultSet rs = stmt.executeQuery(sSQL);
-			if (rs.next()) {
-				oClienteResult = new Cliente(oCliente.getsDni());
-				oClienteResult.setsNombre(rs.getString(2));
-				oClienteResult.setsApellidos(rs.getString(3));
-				oClienteResult.setsFechaNacimiento(rs.getString(4));
+			Gson oGson = new Gson();
+			String json = "[" + oGson.toJson(oCliente) + "]";
+
+			try {
+
+				CallableStatement statement = oConnection.prepareCall("{call cliente_search_by_pk(?)}");
+				statement.setString(1, json);
+
+				ResultSet rs = statement.executeQuery();
+				if (rs.next()) {
+					oClienteResult = new Cliente(oCliente.getsDni());
+					oClienteResult.setsNombre(rs.getString(2));
+					oClienteResult.setsApellidos(rs.getString(3));
+					oClienteResult.setsFechaNacimiento(rs.getString(4));
 				oClienteResult.setuUsuario(new Usuario(rs.getString(5)));
-			}
-			stmt.close();
-		} catch (SQLException e) {
-			oClienteResult = null;
-		}
+				}
 
+				statement.close();
+
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
 		return oClienteResult;
 	}
-    
     
 }
