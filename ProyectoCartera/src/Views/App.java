@@ -25,9 +25,10 @@ public class App {
 					
 				default:
 					System.out.println("Hasta luego.");
+					break;
 				}
 
-			} while (bOpcion != 2);
+			} while (bOpcion != 3);
 			oCtrl.closeDb();
 		} else {
 			System.out.println("Error al conectar con la base de datos.");
