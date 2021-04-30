@@ -22,6 +22,8 @@ public class App {
 				case 2://Conslta
 					ConsultaView.Consultas(oCtrl);
 					break;
+				case 3://Transaccion
+					TransaccionView.Transaccion(oCtrl);
 					
 				default:
 					System.out.println("Hasta luego.");
@@ -49,9 +51,10 @@ public class App {
 		System.out.println("-------------------------");
 		System.out.println("1.	Gestión de clientes");
 		System.out.println("2.	Consultas");
-		System.out.println("3.	Salir");
+		System.out.println("3.	Transacción");
+		System.out.println("4.	Salir");
 		System.out.println("-------------------------");
-		return (byte) Libreria.leer("Introduce una opcion", 1, 3, -1, -1, (byte) 1);
+		return (byte) Libreria.leer("Introduce una opcion", 1, 4, -1, -1, (byte) 1);
     }
 
 	
