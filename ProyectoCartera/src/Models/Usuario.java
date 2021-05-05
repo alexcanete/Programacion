@@ -1,5 +1,6 @@
 package Models;
 
+import java.sql.Connection;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -7,6 +8,8 @@ public class Usuario implements IUsuario {
     private String sNombreUsuario;
     private String sCorreo;
     private String sContrasenia;
+
+
 
     public Usuario(String sNombreUsuario) {
         setsNombreUsuario(sNombreUsuario);

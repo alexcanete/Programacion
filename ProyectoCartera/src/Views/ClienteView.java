@@ -102,14 +102,8 @@ public class ClienteView {
 	}
 
 	private static boolean remove(Controller oCtrl) {
-		boolean bExito = false;
-		Cliente oCliente = searchByDni(oCtrl);
-
-		if (oCliente != null) {
-			System.out.println("Entra cabesa" + oCliente.getsFechaNacimiento());
-			bExito = oCtrl.removeCliente(oCliente);
-		}
-		return bExito;
+		String sNombreUsuario = String.valueOf(Libreria.leer("Introduce nombre de usuario", 1, 250, -1, -1, (byte) 6));
+		return oCtrl.removeUsuario(new Usuario(sNombreUsuario));
 	}
 
 	

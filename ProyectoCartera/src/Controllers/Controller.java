@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 import Models.Cliente;
+import Models.Usuario;
 
 import java.io.*;
 
@@ -89,8 +90,8 @@ public class Controller implements IController {
 		return oPersonasCtrl.getoClientCtrl().add(oCliente, oConnection);
 	}
 
-	public boolean removeCliente(Cliente oCliente) {
-		return oPersonasCtrl.removeCliente(oCliente, oConnection);
+	public boolean removeUsuario(Usuario uUsuario) {
+		return oPersonasCtrl.getoUserCtrl().remove(uUsuario, oConnection);
 	}
 
 	public boolean updateCliente(Cliente oCliente) {
@@ -101,8 +102,6 @@ public class Controller implements IController {
 		return oPersonasCtrl.searchCliente(oCliente, oConnection);
 	}
 
-	/*public Cliente searchSalario(Cliente oCliente) {
-
-	}*/
+	
 
 }
