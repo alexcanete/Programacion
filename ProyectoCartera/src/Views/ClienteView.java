@@ -46,12 +46,12 @@ public class ClienteView {
 			}
 			break;
 		case 4: // Borrar
-			if (remove(oCtrl)) {
-				System.out.println("El cliente ha sido eliminado con exito.");
-			} else {
-				System.out.println("El cliente no se ha podido eliminar.");
-			}
-			break;
+		if (remove(oCtrl)) {
+			System.out.println("El cliente ha sido eliminado con exito.");
+		} else {
+			System.out.println("El cliente no se ha podido eliminar.");
+		}
+		break;
 		}
 	}
 

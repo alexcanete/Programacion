@@ -25,20 +25,21 @@ public class PersonasController {
     /*
      * # CONTROLLER METHODS
      */
-
-    public boolean removeCliente(Cliente oCliente, Connection oConnection) {
-        boolean bExito = false;
-        if (oClientCtrl.remove(oCliente, oConnection)) {
-            bExito = true;
+    public Cliente searchCliente(Cliente oCliente) {
+        Cliente oClienteRes = oClientCtrl.searchByPk(oCliente);
+        if (oClienteRes != null) {
+            Usuario oUsuario = oUserCtrl.searchByPk(oClienteRes.getuUsuario());
+            oClienteRes.setuUsuario(oUsuario);
         }
-        return bExito;
-    }
-
-    public Cliente searchCliente(Cliente oCliente, Connection oConnection) {
-        Cliente oClienteRes = oClientCtrl.searchByPk(oCliente, oConnection);
-        Usuario oUsuario = oUserCtrl.searchByPk(oClienteRes.getuUsuario(), oConnection);
-        oClienteRes.setuUsuario(oUsuario);
         return oClienteRes;
+    }
+    public Usuario searchUserByDni(Cliente oCliente) {
+        Cliente oClienteRes = oClientCtrl.searchByPk(oCliente);
+        Usuario oUsuario = null;
+        if (oClienteRes != null) {
+            oUsuario = oUserCtrl.searchByPk(oClienteRes.getuUsuario());
+        }
+        return oUsuario;
     }
 
     

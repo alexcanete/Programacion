@@ -12,14 +12,21 @@ public class Controller implements IController {
 
 	private PersonasController oPersonasCtrl;
 	private ClienteController oClienteCtrl;
-	private Connection oConnection;
+	private static Connection oConnection;
+	private TransaccionController oTransaccionCtrl;
+
 
 	public Controller() {
 		oPersonasCtrl = new PersonasController();
+		oTransaccionCtrl=new TransaccionController();
 	}
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		return oConnection;
+	}
+
+	public TransaccionController getoTransaccionCtrl() {
+		return oTransaccionCtrl;
 	}
 
 	public PersonasController getoPersonasCtrl() {
@@ -91,15 +98,35 @@ public class Controller implements IController {
 	}
 
 	public boolean removeUsuario(Usuario uUsuario) {
-		return oPersonasCtrl.getoUserCtrl().remove(uUsuario, oConnection);
+		return oPersonasCtrl.getoUserCtrl().remove(uUsuario);
 	}
 
 	public boolean updateCliente(Cliente oCliente) {
-		return oPersonasCtrl.getoClientCtrl().update(oCliente, oConnection);
+		return oPersonasCtrl.getoClientCtrl().update(oCliente);
 	}
 
 	public Cliente searchCliente(Cliente oCliente) {
-		return oPersonasCtrl.searchCliente(oCliente, oConnection);
+		return oPersonasCtrl.searchCliente(oCliente);
+	}
+
+	public static boolean executeProcedure(String json, String sFunction) {
+
+		boolean bExito = false;
+		try {
+
+			CallableStatement statement = oConnection.prepareCall(sFunction);
+			statement.setString(1, json);
+			if (statement.executeUpdate() > 0) {
+				bExito = true;
+			}
+			statement.close();
+
+		} catch (SQLException ex) {
+			bExito = false;
+		}
+
+		return bExito;
+
 	}
 
 	
