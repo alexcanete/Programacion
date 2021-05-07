@@ -15,6 +15,7 @@ public class Controller implements IController {
 	private TransaccionController oTransaccionCtrl;
 	private MonedaController oMonedaCtrl;
 	private BilleteController oBilleteCtrl;
+	private BilleteraController oBilleteraCtrl;
 
 
 
@@ -23,6 +24,7 @@ public class Controller implements IController {
 		oTransaccionCtrl=new TransaccionController();
 		oMonedaCtrl= new MonedaController();
 		oBilleteCtrl=new BilleteController();
+		oBilleteraCtrl=new BilleteraController();
 	}
 
 	public MonedaController getMonedaCtrl(){
@@ -43,6 +45,10 @@ public class Controller implements IController {
 
 	public PersonasController getoPersonasCtrl() {
 		return oPersonasCtrl;
+	}
+
+	public BilleteraController getoBilleteraCtrl() {
+		return oBilleteraCtrl;
 	}
 
 	/*
@@ -168,5 +174,16 @@ public class Controller implements IController {
 		return oBilleteCtrl.remove(oBillete);
 	}
 
+	public boolean updateTransaccion(Transaccion oTransaccion) {
+		return oTransaccionCtrl.update(oTransaccion);
+	}
+
+	public Transaccion searchTransaccion(Transaccion transaccion) {
+		return null;
+	}
 	
+
+	public boolean removeTransaccion(Transaccion oTransaccion) {
+		return oTransaccionCtrl.remove(oTransaccion);
+	}
 }

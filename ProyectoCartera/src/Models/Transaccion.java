@@ -7,8 +7,8 @@ public class Transaccion implements ITransaccion{
     private String sFecha;
     private Operacion oIdOperacion;
 
-    public Transaccion(int iIdTransaccion) {
-        setiIdTransaccion(iIdTransaccion);
+    public Transaccion(int iIdTransaccion2) {
+        setiIdTransaccion(iIdTransaccion2);
     }
 
     public Transaccion(int iIdTransaccion, String sFecha) {
