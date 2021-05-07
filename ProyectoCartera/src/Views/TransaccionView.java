@@ -1,7 +1,6 @@
 package Views;
 import Controllers.Controller;
-import Models.Cliente;
-import Models.Usuario;
+import Models.Transaccion;
 
 public class TransaccionView {
     public static byte subMenuConsultas(){
@@ -18,12 +17,27 @@ public class TransaccionView {
 
 
 
-    /*public static void Transaccion (Controller oCtrl) {
+    public static void Transaccion (Controller oCtrl) {
 		switch (TransaccionView.subMenuConsultas()) {
 		case 1: 
-		;
-		
+		if (create(oCtrl)) { //crear transaccion
+            System.out.println("La transaccion ha sido creado con exito.");
+        } else {
+            System.out.println("La transaccion no se ha podido crear.");
+        }
 		break;
 		
-		}*/
+		}
+
+
+
+        private static boolean create(Controller oCtrl) {
+            String sFecha ,  iIdTransaccion;
+    
+            System.out.println("Introduce los datos de las monedas: ");
+            iIdTransaccion = String.valueOf(Libreria.leer("Introduce la id Transaccion", 1, 250, -1, -1, (byte) 6));
+            sFecha = String.valueOf(Libreria.leer("Introduce la fecha", 1, 250, -1, -1, (byte) 6));
+            
+            return oCtrl.getTransaccionCtrl().add(new Transaccion(iIdTransaccion, sFecha));
+        }
     }

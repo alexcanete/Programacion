@@ -4,10 +4,7 @@ import java.sql.*;
 import java.util.*;
 import java.io.*;
 
-import Models.Billete;
-import Models.Cliente;
-import Models.Moneda;
-import Models.Usuario;
+import Models.*;
 
 
 
@@ -18,6 +15,7 @@ public class Controller implements IController {
 	private TransaccionController oTransaccionCtrl;
 	private MonedaController oMonedaCtrl;
 	private BilleteController oBilleteCtrl;
+
 
 
 	public Controller() {
@@ -39,7 +37,7 @@ public class Controller implements IController {
 		return oConnection;
 	}
 
-	public TransaccionController getoTransaccionCtrl() {
+	public TransaccionController getTransaccionCtrl() {
 		return oTransaccionCtrl;
 	}
 

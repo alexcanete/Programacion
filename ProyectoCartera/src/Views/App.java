@@ -28,12 +28,15 @@ public class App {
 				case 4://Moneda
 				    MonedaView.Moneda(oCtrl);
 					break;
+				case 5://billete
+					BilleteView.Billete(oCtrl);
+					break;
 				default:
 					System.out.println("Hasta luego.");
 					break;
 				}
 
-			} while (bOpcion != 5);
+			} while (bOpcion != 6);
 			oCtrl.closeDb();
 		} else {
 			System.out.println("Error al conectar con la base de datos.");
@@ -55,10 +58,11 @@ public class App {
 		System.out.println("1.	Gestión de clientes");
 		System.out.println("2.	Consultas");
 		System.out.println("3.	Transacción");
-		System.out.println("4.    Moneda");
-		System.out.println("5.	Salir");
+		System.out.println("4.	Moneda");
+		System.out.println("5.	Billete");
+		System.out.println("6.	Salir");
 		System.out.println("-------------------------");
-		return (byte) Libreria.leer("Introduce una opcion", 1, 5, -1, -1, (byte) 1);
+		return (byte) Libreria.leer("Introduce una opcion", 1, 6, -1, -1, (byte) 1);
     }
 
 	
