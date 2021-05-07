@@ -57,6 +57,7 @@ public class ClienteController {
 
 			Gson oGson = new Gson();
 			String json = "[" + oGson.toJson(oCliente) + "]";
+			System.out.println(json);
 
 			bExito = Controller.executeProcedure(json, "{call cliente_update(?)}");
 		}
@@ -117,6 +118,10 @@ public class ClienteController {
 		}
 		return oClienteResult;
 	}
+
+    public Cliente searchByPk(String sDni) {
+        return null;
+    }
 
     
     

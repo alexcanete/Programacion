@@ -2,7 +2,6 @@ package Controllers;
 
 import Models.Cliente;
 import Models.Usuario;
-import java.sql.*;
 
 public class PersonasController {
 
@@ -25,6 +24,7 @@ public class PersonasController {
     /*
      * # CONTROLLER METHODS
      */
+    
     public Cliente searchCliente(Cliente oCliente) {
         Cliente oClienteRes = oClientCtrl.searchByPk(oCliente);
         if (oClienteRes != null) {
@@ -33,14 +33,8 @@ public class PersonasController {
         }
         return oClienteRes;
     }
-    public Usuario searchUserByDni(Cliente oCliente) {
-        Cliente oClienteRes = oClientCtrl.searchByPk(oCliente);
-        Usuario oUsuario = null;
-        if (oClienteRes != null) {
-            oUsuario = oUserCtrl.searchByPk(oClienteRes.getuUsuario());
-        }
-        return oUsuario;
-    }
+
+    
 
     
 }

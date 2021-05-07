@@ -18,12 +18,12 @@ public class TransaccionView {
 
 
 
-    public static void Transaccion (Controller oCtrl) {
+    /*public static void Transaccion (Controller oCtrl) {
 		switch (TransaccionView.subMenuConsultas()) {
 		case 1: 
 		;
 		
 		break;
 		
-		}
+		}*/
     }

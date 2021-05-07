@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Connection;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -71,9 +70,20 @@ public class Usuario implements IUsuario {
 
     public boolean checkUsuario() {
 		boolean bExito = false;
-		if (this.getsCorreo() != null && this.getsContrasenia() != null) {
+		if (this.getsNombreUsuario() != null && this.getsContrasenia() != null) {
 			bExito = true;
 		}
 		return bExito;
 	}
+
+    @Override
+    public String toString() {
+        return "{" +
+            " sNombreUsuario='" + getsNombreUsuario() + "'" +
+            ", sCorreo='" + getsCorreo() + "'" +
+            ", sContrasenia='" + getsContrasenia() + "'" +
+            "}";
+    }
+
+
 }

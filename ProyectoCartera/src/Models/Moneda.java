@@ -51,4 +51,12 @@ public class Moneda implements IMoneda {
         return Objects.hash(sTipoMoneda);
     }
 
+    public boolean checkMoneda() {
+		boolean bExito = false;
+		if (this.getsTipoMoneda() != null && this.getsValorMonedaEU() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
+
 }

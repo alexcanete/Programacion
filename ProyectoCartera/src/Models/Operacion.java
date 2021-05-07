@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class Operacion {
     private int iIdOperacion;
-    private boolean boTipoOperacion;
+    private String sTipoOperacion;
 
     public Operacion(int iIdOperacion) {
         setiIdOperacion(iIdOperacion);
     }
 
-    public Operacion(int iIdOperacion, boolean boTipoOperacion) {
+    public Operacion(int iIdOperacion, String sTipoOperacion) {
         setiIdOperacion(iIdOperacion);
-        setboTipoOperacion(boTipoOperacion);
+        setsTipoOperacion(sTipoOperacion);
     }
 
     public int getiIdOperacion() {
@@ -23,16 +23,23 @@ public class Operacion {
         this.iIdOperacion = iIdOperacion;
     }
 
-    public boolean getboTipoOperacion() {
-        return this.boTipoOperacion;
+    public String getsTipoOperacion() {
+        return this.sTipoOperacion;
     }
 
-    public void setboTipoOperacion(boolean boTipoOperacion) {
-        this.boTipoOperacion = boTipoOperacion;
+    public void setsTipoOperacion(String sTipoOperacion) {
+        
+        if (sTipoOperacion.equals("Suma")) {
+            this.sTipoOperacion = sTipoOperacion;
+        }else if(sTipoOperacion.equals("Resta")){
+            this.sTipoOperacion = sTipoOperacion;
+
+        }
+        
     }
 
     public String toString() {
-        return "{" + " iIdOperacion='" + getiIdOperacion() + "'" + ", boTipoOperacion='" + getboTipoOperacion() + "'"
+        return "{" + " iIdOperacion='" + getiIdOperacion() + "'" + ", sTipoOperacion='" + getsTipoOperacion() + "'"
                 + "}";
     }
 
@@ -49,5 +56,13 @@ public class Operacion {
     public int hashCode() {
         return Objects.hash(iIdOperacion);
     }
+
+    public boolean checkOperacion() {
+		boolean bExito = false;
+		if (this.getiIdOperacion() == 0 && this.getsTipoOperacion() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
 
 }

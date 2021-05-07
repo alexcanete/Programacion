@@ -50,4 +50,13 @@ public class Billete implements IBillete {
         return Objects.hash(sTipoBillete, sValorBilleteEU);
     }
 
+    
+    public boolean checkBilletera() {
+		boolean bExito = false;
+		if (this.sTipoBillete != null && this.getsValorBilleteEU() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
+
 }

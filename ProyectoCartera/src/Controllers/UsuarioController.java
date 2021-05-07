@@ -76,7 +76,8 @@ public class UsuarioController{
 				ResultSet rs = statement.executeQuery();
 				if (rs.next()) {
 					oUsuarioResult = new Usuario(oUsuario.getsNombreUsuario());
-					oUsuarioResult.setsContrasenia(rs.getString(2));
+					oUsuarioResult.setsCorreo(rs.getString(2));
+					oUsuarioResult.setsContrasenia(rs.getString(3));
 				}
 
 				statement.close();

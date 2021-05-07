@@ -2,23 +2,29 @@ package Controllers;
 
 import java.sql.*;
 import java.util.*;
-
+import java.io.*;
 import Models.Cliente;
+import Models.Moneda;
 import Models.Usuario;
 
-import java.io.*;
+
 
 public class Controller implements IController {
 
 	private PersonasController oPersonasCtrl;
-	private ClienteController oClienteCtrl;
 	private static Connection oConnection;
 	private TransaccionController oTransaccionCtrl;
+	private MonedaController oMonedaCtrl;
 
 
 	public Controller() {
 		oPersonasCtrl = new PersonasController();
 		oTransaccionCtrl=new TransaccionController();
+		oMonedaCtrl= new MonedaController();
+	}
+
+	public MonedaController getMonedaCtrl(){
+		return oMonedaCtrl;
 	}
 
 	public static Connection getConnection() {
@@ -105,10 +111,9 @@ public class Controller implements IController {
 		return oPersonasCtrl.getoClientCtrl().update(oCliente);
 	}
 
-	public Cliente searchCliente(Cliente oCliente) {
-		return oPersonasCtrl.searchCliente(oCliente);
-	}
+	
 
+	
 	public static boolean executeProcedure(String json, String sFunction) {
 
 		boolean bExito = false;
@@ -127,6 +132,18 @@ public class Controller implements IController {
 
 		return bExito;
 
+	}
+
+	public Cliente searchCliente(Cliente cliente) {
+		return null;
+	}
+
+	public Moneda searchMoneda(Moneda moneda){
+		return null;
+	}
+
+	public boolean updateMoneda(Moneda oMoneda) {
+		return oMonedaCtrl.update(oMoneda);
 	}
 
 	

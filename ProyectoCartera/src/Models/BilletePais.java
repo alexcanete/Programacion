@@ -62,5 +62,13 @@ public class BilletePais {
         return Objects.hash(oIdOperacion, bIdBillete, pNombrePais);
     }
 
+    public boolean checkBilletePais() {
+		boolean bExito = false;
+		if (this.getoIdOperacion() != null && this.getoNombrePais() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
+
 
 }

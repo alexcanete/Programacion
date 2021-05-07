@@ -87,7 +87,7 @@ public class ClienteView {
 					250, -1, -1, (byte) 6));
 			oCliente.setsApellidos(sApellidos);
 
-			sFechaNacimiento = String.valueOf(Libreria.leer("Introduce una direccion (" + oCliente.getsFechaNacimiento() + ")", 0,
+			sFechaNacimiento = String.valueOf(Libreria.leer("Introduce la fecha de nacimiento (" + oCliente.getsFechaNacimiento() + ")", 0,
 					250, -1, -1, (byte) 6));
 			oCliente.setsFechaNacimiento(sFechaNacimiento);
 
@@ -97,13 +97,18 @@ public class ClienteView {
 	}
 
 	private static Cliente searchByDni(Controller oCtrl) {
-		String sFechaNacimiento = String.valueOf(Libreria.leer("Introduce un dni", 9, 9, -1, -1, (byte) 6));
-		return oCtrl.searchCliente(new Cliente(sFechaNacimiento));
+		String sDni = String.valueOf(Libreria.leer("Introduce un dni", 9, 9, -1, -1, (byte) 6));
+		return oCtrl.getoPersonasCtrl().searchCliente(new Cliente(sDni));
 	}
+
 
 	private static boolean remove(Controller oCtrl) {
 		String sNombreUsuario = String.valueOf(Libreria.leer("Introduce nombre de usuario", 1, 250, -1, -1, (byte) 6));
 		return oCtrl.removeUsuario(new Usuario(sNombreUsuario));
+	}
+
+	public static int subMenuMoneda() {
+		return 0;
 	}
 
 	

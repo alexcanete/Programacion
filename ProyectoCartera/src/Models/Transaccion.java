@@ -69,7 +69,13 @@ public class Transaccion implements ITransaccion{
         return Objects.hash(iIdTransaccion);
     }
 
-    
+    public boolean checkTransaccion() {
+		boolean bExito = false;
+		if (this.getiIdTransaccion() == 0 && this.getsFecha() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
 
 
 

@@ -1,7 +1,7 @@
 package Views;
 
 import Controllers.Controller;
-
+import static Views.MonedaView.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -23,14 +23,17 @@ public class App {
 					ConsultaView.Consultas(oCtrl);
 					break;
 				case 3://Transaccion
-					TransaccionView.Transaccion(oCtrl);
-					
+					//TransaccionView.Transaccion(oCtrl);
+					break;
+				case 4://Moneda
+				    MonedaView.Moneda(oCtrl);
+					break;
 				default:
 					System.out.println("Hasta luego.");
 					break;
 				}
 
-			} while (bOpcion != 3);
+			} while (bOpcion != 5);
 			oCtrl.closeDb();
 		} else {
 			System.out.println("Error al conectar con la base de datos.");
@@ -52,9 +55,10 @@ public class App {
 		System.out.println("1.	Gestión de clientes");
 		System.out.println("2.	Consultas");
 		System.out.println("3.	Transacción");
-		System.out.println("4.	Salir");
+		System.out.println("4.    Moneda");
+		System.out.println("5.	Salir");
 		System.out.println("-------------------------");
-		return (byte) Libreria.leer("Introduce una opcion", 1, 4, -1, -1, (byte) 1);
+		return (byte) Libreria.leer("Introduce una opcion", 1, 5, -1, -1, (byte) 1);
     }
 
 	

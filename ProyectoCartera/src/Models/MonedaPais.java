@@ -62,5 +62,12 @@ public class MonedaPais {
             "}";
     }
 
+    public boolean checkMonedapais() {
+		boolean bExito = false;
+		if (this.getmIdMoneda() !=null && this.getpNombrePais() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
 
 }

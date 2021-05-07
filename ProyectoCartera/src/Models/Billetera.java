@@ -85,4 +85,12 @@ public class Billetera {
         return boEquals;
        
     }
+
+    public boolean checkNombreBilletera() {
+		boolean bExito = false;
+		if (this.getsNombreBilletera() != null && this.getiSaldoActual() == 0) {
+			bExito = true;
+		}
+		return bExito;
+	}
 }

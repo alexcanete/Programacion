@@ -31,4 +31,11 @@ public class Pais {
         return Objects.hashCode(sNombrePais);
     }
 
+    public boolean checkPais() {
+		boolean bExito = false;
+		if (this.getsNombrePais() != null) {
+			bExito = true;
+		}
+		return bExito;
+	}
 }

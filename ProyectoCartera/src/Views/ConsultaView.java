@@ -33,7 +33,7 @@ public class ConsultaView {
 	}
 	private static Cliente searchByDni(Controller oCtrl) {
 		String sDni = String.valueOf(Libreria.leer("Introduce un dni", 9, 9, -1, -1, (byte) 6));
-		return oCtrl.searchCliente(new Cliente(sDni));
+		return oCtrl.getoPersonasCtrl().searchCliente(new Cliente(sDni));
 	}
 }		
 
