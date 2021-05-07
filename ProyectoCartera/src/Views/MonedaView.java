@@ -33,9 +33,17 @@ public class MonedaView {
 				System.out.println("El cliente no se ha podido modificar.");
 			}
 			break;
+            case 3: // Borrar
+            if (remove(oCtrl)) {
+                System.out.println("La moneda ha sido eliminado con exito.");
+            } else {
+                System.out.println("La moneda no se ha podido eliminar.");
             }
-            
+            break;
+		    }
         }
+            
+ 
 
 
         private static boolean create(Controller oCtrl) {
@@ -69,5 +77,12 @@ public class MonedaView {
                 bExito = oCtrl.updateMoneda(oMoneda);
             }
             return bExito;
+        }
+
+
+
+        private static boolean remove(Controller oCtrl) {
+            String sTipoMoneda = String.valueOf(Libreria.leer("Introduce el tipo de moneda", 1, 250, -1, -1, (byte) 6));
+            return oCtrl.removeMoneda(new Moneda(sTipoMoneda));
         }
 }

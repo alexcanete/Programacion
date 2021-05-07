@@ -3,6 +3,8 @@ package Controllers;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
+
+import Models.Billete;
 import Models.Cliente;
 import Models.Moneda;
 import Models.Usuario;
@@ -15,16 +17,22 @@ public class Controller implements IController {
 	private static Connection oConnection;
 	private TransaccionController oTransaccionCtrl;
 	private MonedaController oMonedaCtrl;
+	private BilleteController oBilleteCtrl;
 
 
 	public Controller() {
 		oPersonasCtrl = new PersonasController();
 		oTransaccionCtrl=new TransaccionController();
 		oMonedaCtrl= new MonedaController();
+		oBilleteCtrl=new BilleteController();
 	}
 
 	public MonedaController getMonedaCtrl(){
 		return oMonedaCtrl;
+	}
+	
+	public BilleteController getBilleteCtrl() { 
+		return oBilleteCtrl;
 	}
 
 	public static Connection getConnection() {
@@ -146,6 +154,21 @@ public class Controller implements IController {
 		return oMonedaCtrl.update(oMoneda);
 	}
 
-	
 
+	public boolean removeMoneda(Moneda oMoneda) {
+		return oMonedaCtrl.remove(oMoneda);
+	}
+
+	public Billete searchBillete(Billete billete)  {
+		return null;
+	}
+
+	public boolean updateBillete(Billete oBillete) {
+		return oBilleteCtrl.update(oBillete);
+	}
+	public boolean removeBillete(Billete oBillete) {
+		return oBilleteCtrl.remove(oBillete);
+	}
+
+	
 }

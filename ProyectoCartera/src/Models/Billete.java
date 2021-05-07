@@ -51,7 +51,7 @@ public class Billete implements IBillete {
     }
 
     
-    public boolean checkBilletera() {
+    public boolean checkBillete() {
 		boolean bExito = false;
 		if (this.sTipoBillete != null && this.getsValorBilleteEU() != null) {
 			bExito = true;

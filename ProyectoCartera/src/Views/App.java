@@ -1,7 +1,7 @@
 package Views;
 
 import Controllers.Controller;
-import static Views.MonedaView.*;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
