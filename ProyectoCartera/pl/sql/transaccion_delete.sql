@@ -1,6 +1,4 @@
-DROP PROCEDURE IF EXISTS `moneda_search_by_pk`;
-DELIMITER $$
-CREATE PROCEDURE `moneda_search_by_pk` (
+REATE DEFINER=`proyecto`@`localhost` PROCEDURE `transaccion_delete`(
 	IN oObject JSON
 )
 BEGIN
@@ -9,7 +7,7 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE sTipomonedaparam VARCHAR(255); 
+    DECLARE iIdTransaccionParam VARCHAR(255);
 	
     SET vJsonIsValid = JSON_VALID(oObject);
     
@@ -21,11 +19,11 @@ BEGIN
 
         IF vItems > 0 THEN 			
             WHILE vIndex < vItems DO
-                SET sTipomonedaparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipomoneda')));
-                SELECT * FROM moneda WHERE TIPOMONEDA = `sTipomonedaparam`;
-                SET vIndex = vIndex + 1;                
+                SET iIdTransaccionParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].iIdTransaccionParam')));                
+                DELETE FROM transaccion WHERE IdTransaccion = `iIdTransaccionParam`;
+                SET vIndex = vIndex + 1;
             END WHILE;            
         END IF;	
-    END IF;    
-END $$
-DELIMITER ;
+    END IF;
+    
+END

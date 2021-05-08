@@ -29,7 +29,7 @@ BEGIN
                 SET sValormonedaEUParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sValormonedaEU')));
                 
                 
-                UPDATE moneda SET Tipomoneda = `sTipomonedaParam`, ValormonedaEU = `sValormonedaEUParam`, sFechaNacimiento = `sFehaNacimientoParam` WHERE sDni = `sDniParam`;
+                UPDATE moneda SET Tipomoneda = `sTipomonedaParam`, ValormonedaEU = `sValormonedaEUParam`;
                 SET vIndex = vIndex + 1;    
                 
             END WHILE;            

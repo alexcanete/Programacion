@@ -22,7 +22,7 @@ BEGIN
         IF vItems > 0 THEN 			
             WHILE vIndex < vItems DO
                 SET sTipoBilleteparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipoBillete')));
-                SELECT * FROM BILLETE WHERE sDni = `sTipoBilleteparam`;
+                SELECT * FROM BILLETE WHERE tipoBillete = `sTipoBilleteparam`;
                 SET vIndex = vIndex + 1;                
             END WHILE;            
         END IF;	

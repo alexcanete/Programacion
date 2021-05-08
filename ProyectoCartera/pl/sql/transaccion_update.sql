@@ -1,6 +1,6 @@
-DROP PROCEDURE IF EXISTS `billete_update`;
+DROP PROCEDURE IF EXISTS `transaccion_update`;
 DELIMITER $$
-CREATE PROCEDURE `billete_update` (
+CREATE PROCEDURE `transaccion_update` (
 	IN oObject JSON
 )
 BEGIN
@@ -10,8 +10,8 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE sTipoBilleteparam VARCHAR(255);
-    DECLARE sValorBilleteEUParam VARCHAR(255);   
+    DECLARE sTipotransaccionparam VARCHAR(255);
+    DECLARE sValortransaccionEUParam VARCHAR(255);   
     	
     SET vJsonIsValid = JSON_VALID(oObject);
     
@@ -25,11 +25,11 @@ BEGIN
         
             WHILE vIndex < vItems DO
 				
-                SET sTipoBilleteparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipoBillete')));
-                SET sValorBilleteEUParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sValorBilleteEU')));
+                SET sTipotransaccionparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipotransaccion')));
+                SET sValortransaccionEUParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sValortransaccionEU')));
                 
                 
-                UPDATE BILLETE SET TipoBillete = `sTipoBilleteParam`, ValorBilleteEU = `sValorBilleteEUParam`;
+                UPDATE transaccion SET Tipotransaccion = `sTipotransaccionParam`, ValortransaccionEU = `sValortransaccionEUParam`;
                 SET vIndex = vIndex + 1;    
                 
             END WHILE;            
