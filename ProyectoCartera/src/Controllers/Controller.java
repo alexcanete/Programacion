@@ -16,6 +16,8 @@ public class Controller implements IController {
 	private MonedaController oMonedaCtrl;
 	private BilleteController oBilleteCtrl;
 	private BilleteraController oBilleteraCtrl;
+	private PaisController oPaisCtrl;
+	private OperacionController oOperacionCtrl;
 
 
 
@@ -25,6 +27,8 @@ public class Controller implements IController {
 		oMonedaCtrl= new MonedaController();
 		oBilleteCtrl=new BilleteController();
 		oBilleteraCtrl=new BilleteraController();
+		oPaisCtrl= new PaisController();
+		oOperacionCtrl=new OperacionController();
 	}
 
 	public MonedaController getMonedaCtrl(){
@@ -49,6 +53,12 @@ public class Controller implements IController {
 
 	public BilleteraController getoBilleteraCtrl() {
 		return oBilleteraCtrl;
+	}
+	public PaisController getoPaisCtrl() {
+		return oPaisCtrl;
+	}
+	public OperacionController getoOperacionCtrl() {
+		return oOperacionCtrl;
 	}
 
 	/*
@@ -185,5 +195,38 @@ public class Controller implements IController {
 
 	public boolean removeTransaccion(Transaccion oTransaccion) {
 		return oTransaccionCtrl.remove(oTransaccion);
+	}
+
+
+	public Billetera searchBilletera(Billetera billetera)  {
+		return null;
+	}
+
+	public boolean updateBilletera(Billetera oBilletera) {
+		return oBilleteraCtrl.update(oBilletera);
+	}
+	public boolean removeBilletera(Billetera oBilletera) {
+		return oBilleteraCtrl.remove(oBilletera);
+	}
+
+
+	public Billetera searchPais(Pais Pais)  {
+		return null;
+	}
+
+	public boolean removePais(Pais oPais) {
+		return oPaisCtrl.remove(oPais);
+	}
+
+
+	public Operacion searchOperacion(Operacion operacion)  {
+		return null;
+	}
+
+	public boolean updateOperacion(Operacion oOperacion) {
+		return oOperacionCtrl.update(oOperacion);
+	}
+	public boolean removeOperacion(Operacion oOperacion) {
+		return oOperacionCtrl.remove(oOperacion);
 	}
 }

@@ -5,14 +5,16 @@ import java.util.Objects;
 public class Billetera {
     
     private String sNombreBilletera;
-    private int iSaldoActual;
-    private Transaccion tTransaccionId;
-    private Billetera bBilleteraId;
-    private Cliente cClienteId;
+    private String sSaldoActual;
+    private Billetera obNombreBilletera;
+    private Cliente oClienteDni;
 
 
-    public Billetera(String sNombreBilletera){
+    public Billetera(String sNombreBilletera, String sSaldoActual2){
         setsNombreBilletera(sNombreBilletera);
+    }
+
+    public Billetera(String sNombreBilletera2) {
     }
 
     public String getsNombreBilletera() {
@@ -20,39 +22,37 @@ public class Billetera {
     }
 
     public void setsNombreBilletera(String sNombreBilletera) {
-        this.sNombreBilletera = sNombreBilletera;
+        if(sNombreBilletera != null && sNombreBilletera.length() > 1 && sNombreBilletera.length()< 254){
+            this.sNombreBilletera = sNombreBilletera;
+        }
     }
 
-    public int getiSaldoActual() {
-        return this.iSaldoActual;
+    public String getsSaldoActual() {
+        return this.sSaldoActual;
     }
 
-    public void setiSaldoActual(int iSaldoActual) {
-        this.iSaldoActual = iSaldoActual;
+    public void setsSaldoActual(String sSaldoActual) {
+        if(sSaldoActual != null && sSaldoActual.length() > 1 && sSaldoActual.length()< 254){
+            this.sSaldoActual = sSaldoActual;
+        }
     }
 
-    public Transaccion gettTransaccionId() {
-        return this.tTransaccionId;
+    
+
+    public Billetera getobNombreBilletera() {
+        return this.obNombreBilletera;
     }
 
-    public void settTransaccionId(Transaccion tTransaccionId) {
-        this.tTransaccionId = tTransaccionId;
+    public void setobNombreBilletera(Billetera obNombreBilletera) {
+        this.obNombreBilletera = obNombreBilletera;
     }
 
-    public Billetera getbBilleteraId() {
-        return this.bBilleteraId;
+    public Cliente getoClienteDni() {
+        return this.oClienteDni;
     }
 
-    public void setbBilleteraId(Billetera bBilleteraId) {
-        this.bBilleteraId = bBilleteraId;
-    }
-
-    public Cliente getcClienteId() {
-        return this.cClienteId;
-    }
-
-    public void setcClienteId(Cliente cClienteId) {
-        this.cClienteId = cClienteId;
+    public void setoClienteDni(Cliente oClienteDni) {
+        this.oClienteDni = oClienteDni;
     }
 
 
@@ -60,10 +60,9 @@ public class Billetera {
     public String toString() {
         return "{" +
             " sNombreBilletera='" + getsNombreBilletera() + "'" +
-            ", iSaldoActual='" + getiSaldoActual() + "'" +
-            ", tTransaccionId='" + gettTransaccionId() + "'" +
-            ", bBilleteraId='" + getbBilleteraId() + "'" +
-            ", cClienteId='" + getcClienteId() + "'" +
+            ", sSaldoActual='" + getsSaldoActual() + "'" +
+            ", obNombreBilletera='" + getobNombreBilletera() + "'" +
+            ", oClienteDni='" + getoClienteDni() + "'" +
             "}";
     }
     
@@ -88,7 +87,7 @@ public class Billetera {
 
     public boolean checkBilletera() {
 		boolean bExito = false;
-		if (this.getsNombreBilletera() != null && this.getiSaldoActual() == 0) {
+		if (this.getsNombreBilletera() != null && this.getsSaldoActual() != null) {
 			bExito = true;
 		}
 		return bExito;

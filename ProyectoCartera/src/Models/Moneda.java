@@ -20,7 +20,10 @@ public class Moneda implements IMoneda {
     }
 
     public void setsTipoMoneda(String sTipoMoneda) {
-        this.sTipoMoneda = sTipoMoneda;
+        if (sTipoMoneda != null && sTipoMoneda.length() >1 && sTipoMoneda.length() < 254){
+            this.sTipoMoneda = sTipoMoneda;
+
+        }
     }
 
     public String getsValorMonedaEU() {
@@ -28,7 +31,9 @@ public class Moneda implements IMoneda {
     }
 
     public void setsValorMonedaEU(String sValorMonedaEU) {
-        this.sValorMonedaEU = sValorMonedaEU;
+        if(sValorMonedaEU != null && sValorMonedaEU.length()> 1 && sValorMonedaEU.length()< 254){
+            this.sValorMonedaEU = sValorMonedaEU;
+        }
     }
 
     public String toString() {

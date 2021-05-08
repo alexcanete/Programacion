@@ -33,7 +33,10 @@ public class Transaccion implements ITransaccion{
     }
 
     public void setiIdTransaccion(int iIdTransaccion) {
-        this.iIdTransaccion = iIdTransaccion;
+        if(iIdTransaccion > 1 && iIdTransaccion< 254){
+            this.iIdTransaccion = iIdTransaccion;
+
+        }
     }
 
     public String getsFecha() {
@@ -41,7 +44,10 @@ public class Transaccion implements ITransaccion{
     }
 
     public void setsFecha(String sFecha) {
-        this.sFecha = sFecha;
+        if(sFecha != null && sFecha.length() > 8 && sFecha.length()< 254){
+            this.sFecha = sFecha;
+
+        }
     }
 
     @Override

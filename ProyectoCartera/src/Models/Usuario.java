@@ -25,7 +25,7 @@ public class Usuario implements IUsuario {
     }
 
     public void setsNombreUsuario(String sNombreUsuario) {
-        if(sNombreUsuario!=null && !sNombreUsuario.isEmpty() && sNombreUsuario.length() > 3 && sNombreUsuario.length() < 15){
+        if(sNombreUsuario!=null && sNombreUsuario.isEmpty() && sNombreUsuario.length() > 3 && sNombreUsuario.length() < 15){
             this.sNombreUsuario = sNombreUsuario;
         }
     }

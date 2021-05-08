@@ -20,7 +20,9 @@ public class Billete implements IBillete {
     }
 
     public void setsTipoBillete(String sTipoBillete) {
-        this.sTipoBillete = sTipoBillete;
+        if(sTipoBillete != null && sTipoBillete.length()>1 && sTipoBillete.length()< 254){
+            this.sTipoBillete = sTipoBillete;
+        }
     }
 
     public String getsValorBilleteEU() {
@@ -28,7 +30,9 @@ public class Billete implements IBillete {
     }
 
     public void setsValorBilleteEU(String sValorBilleteEU) {
-        this.sValorBilleteEU = sValorBilleteEU;
+        if(sValorBilleteEU != null && sValorBilleteEU.length() > 1 && sValorBilleteEU.length()< 254){
+            this.sValorBilleteEU = sValorBilleteEU;
+        }
     }
 
     public String toString() {

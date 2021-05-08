@@ -20,7 +20,10 @@ public class Operacion {
     }
 
     public void setiIdOperacion(int iIdOperacion) {
-        this.iIdOperacion = iIdOperacion;
+        if(iIdOperacion > 1 && iIdOperacion< 254){
+            this.iIdOperacion = iIdOperacion;
+
+        }
     }
 
     public String getsTipoOperacion() {

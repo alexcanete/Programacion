@@ -14,6 +14,7 @@ public class Pais {
     }
 
     public void setsNombrePais(String sNombrePais) {
+        if(sNombrePais != null && sNombrePais.length() > 1 && sNombrePais.length()<254)
         this.sNombrePais = sNombrePais;
     }
 

@@ -52,7 +52,10 @@ public class Cliente implements ICliente{
     }
 
     public void setsNombre(String sNombre) {
-        this.sNombre = sNombre;
+        if(sNombre != null && sNombre.length()> 1 && sNombre.length()< 254){
+            this.sNombre = sNombre;
+
+        }
     }
 
     public String getsApellidos() {
@@ -60,7 +63,9 @@ public class Cliente implements ICliente{
     }
 
     public void setsApellidos(String sApellidos) {
-        this.sApellidos = sApellidos;
+        if(sApellidos != null && sApellidos.length() > 1 && sApellidos.length()< 254){
+            this.sApellidos = sApellidos;
+        }
     }
 
     public String getsFechaNacimiento() {
@@ -68,7 +73,9 @@ public class Cliente implements ICliente{
     }
 
     public void setsFechaNacimiento(String sFechaNacimiento) {
-        this.sFechaNacimiento = sFechaNacimiento;
+        if(sFechaNacimiento != null && sFechaNacimiento.length() > 1 && sFechaNacimiento.length()< 254){
+            this.sFechaNacimiento = sFechaNacimiento;
+        }
     }
 
 
