@@ -1,6 +1,6 @@
-DROP PROCEDURE IF EXISTS `transaccion_update`;
+DROP PROCEDURE IF EXISTS `operacion_update`;
 DELIMITER $$
-CREATE PROCEDURE `transaccion_update` (
+CREATE PROCEDURE `operacion_update` (
 	IN oObject JSON
 )
 BEGIN
@@ -10,8 +10,8 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE iIdTransaccionParam VARCHAR(255);
-    DECLARE sFechaParam VARCHAR(255);   
+    DECLARE iIdOperacionParam VARCHAR(255);
+    DECLARE sTipoOperacionParam VARCHAR(255); 
     	
     SET vJsonIsValid = JSON_VALID(oObject);
     
@@ -25,11 +25,11 @@ BEGIN
         
             WHILE vIndex < vItems DO
 				
-                SET iIdTransaccionParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].iIdTransaccionParam')));
-                SET sFechaParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sFecha')));
+                SET iIdoperacionParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].iIdOperacion')));
+                SET sTipoOperacionParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipoOperacion')));
                 
                 
-                UPDATE transaccion SET IdTransaccionParam = `iIdTransaccionParam`, Fecha = `sFechaParam`;
+                UPDATE operacion SET Idoperacion = `iIdOperacionParam`, Fecha = `sTipoOperacionParam`;
                 SET vIndex = vIndex + 1;    
                 
             END WHILE;            

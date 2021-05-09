@@ -1,6 +1,6 @@
-DROP PROCEDURE IF EXISTS `transaccion_update`;
+DROP PROCEDURE IF EXISTS `pais_create`;
 DELIMITER $$
-CREATE PROCEDURE `transaccion_update` (
+CREATE PROCEDURE `pais_create` (
 	IN oObject JSON
 )
 BEGIN
@@ -8,12 +8,13 @@ BEGIN
 	DECLARE vJsonIsValid INT;
     DECLARE vItems INT;
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
+    DECLARE vValido INT;
     
     # Variables para parseo del objeto JSON
-    DECLARE iIdTransaccionParam VARCHAR(255);
-    DECLARE sFechaParam VARCHAR(255);   
+    DECLARE sNombrePaisParam VARCHAR(255);
     	
     SET vJsonIsValid = JSON_VALID(oObject);
+    SET vValido = 0;
     
 	IF vJsonIsValid = 0 THEN
 		SELECT "JSON suministrado no es válido";     
@@ -21,19 +22,20 @@ BEGIN
 		# Nos traemos el numero de columnas del Json
         SET vItems = JSON_LENGTH(oObject);
 
-        IF vItems > 0 THEN
-        
+        IF vItems > 0 THEN 
+			
             WHILE vIndex < vItems DO
 				
-                SET iIdTransaccionParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].iIdTransaccionParam')));
-                SET sFechaParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sFecha')));
+                SET sNombrePaisParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sNombrePais')));
                 
-                
-                UPDATE transaccion SET IdTransaccionParam = `iIdTransaccionParam`, Fecha = `sFechaParam`;
+                INSERT INTO PAis VALUES (`sNombrePaisParam`);
                 SET vIndex = vIndex + 1;    
                 
             END WHILE;            
         END IF;	
-    END IF;    
+        SET vValido = 1;
+    END IF;
+    
+    SELECT vValido;
 END $$
 DELIMITER ;

@@ -33,7 +33,7 @@ BEGIN
                 SET sFechaNacimientoParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sFechaNacimiento')));
                 
                 
-                UPDATE Cliente SET sNombre = `sNombreParam`, sApellidos = `sApellidosParam`, sFechaNacimiento = `sFehaNacimientoParam` WHERE sDni = `sDniParam`;
+                UPDATE Cliente SET Nombre = `sNombreParam`, Apellidos = `sApellidosParam`, FechaNacimiento = `sFehaNacimientoParam` WHERE sDni = `sDniParam`;
                 SET vIndex = vIndex + 1;    
                 
             END WHILE;            
