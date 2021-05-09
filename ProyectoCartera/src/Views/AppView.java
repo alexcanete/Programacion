@@ -2,7 +2,7 @@ package Views;
 
 import Controllers.Controller;
 
-public class App {
+public class AppView {
 	public static void main(String[] args) throws Exception {
 		byte bOpcion;
 		Controller oCtrl = new Controller();
