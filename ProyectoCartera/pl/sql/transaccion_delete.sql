@@ -1,4 +1,6 @@
-REATE DEFINER=`proyecto`@`localhost` PROCEDURE `transaccion_delete`(
+DROP PROCEDURE IF EXISTS `transaccion_delete`;
+DELIMITER $$
+CREATE PROCEDURE `transaccion_delete`(
 	IN oObject JSON
 )
 BEGIN
@@ -27,3 +29,4 @@ BEGIN
     END IF;
     
 END
+DELIMITER ;

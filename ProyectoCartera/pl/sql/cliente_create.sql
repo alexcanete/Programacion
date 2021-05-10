@@ -16,9 +16,7 @@ BEGIN
     DECLARE sNombreUsuarioParam VARCHAR(255);
     DECLARE sCorreoParam VARCHAR(255);
     DECLARE sContraseniaPanam VARCHAR(255);
-    DECLARE vValido INT;
 	
-    SET vValido = 0;
     SET vJsonIsValid = JSON_VALID(oObject);
     
 	IF vJsonIsValid = 0 THEN
@@ -46,11 +44,9 @@ BEGIN
                 SET vIndex = vIndex + 1;
             END WHILE;
             
-            SET vValido = 1;
         END IF;	
     END IF;
     
-    SELECT vValido;
     
 END $$
 DELIMITER ;

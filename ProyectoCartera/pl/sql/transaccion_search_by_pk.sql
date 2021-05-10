@@ -9,7 +9,7 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE sTipotransaccionparam VARCHAR(255); 
+    DECLARE iIdTransaccionParam VARCHAR(255); 
 	
     SET vJsonIsValid = JSON_VALID(oObject);
     

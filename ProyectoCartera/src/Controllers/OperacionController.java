@@ -8,6 +8,15 @@ import com.google.gson.*;
 
 
 public class OperacionController {
+
+    private OperacionController oOperacionCtrl;
+
+    public OperacionController getOperacionCtrl(){
+        return oOperacionCtrl;
+    }
+
+    
+
     public boolean add(Operacion oOperacion) {
         boolean bExito = false;
         if (oOperacion != null && oOperacion.checkOperacion()) {
