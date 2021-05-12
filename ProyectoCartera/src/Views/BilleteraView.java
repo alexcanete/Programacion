@@ -44,7 +44,7 @@ public class BilleteraView {
 
         System.out.println("Introduce los datos de las Billeteras: ");
         sNombreBilletera = String.valueOf(Libreria.leer("Introduce el nombre de la billetera", 1, 250, -1, -1, (byte) 6));
-        sSaldoActual = String.valueOf(Libreria.leer("Introduce el saldo de la billetera", 1, 250, -1, -1, (byte) 1));
+        sSaldoActual = String.valueOf(Libreria.leer("Introduce el saldo de la billetera", 1, 250, -1, -1, (byte) 6));
         
         return oCtrl.getoBilleteraCtrl().add(new Billetera(sNombreBilletera, sSaldoActual));
     }

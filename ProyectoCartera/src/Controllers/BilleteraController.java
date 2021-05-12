@@ -5,7 +5,16 @@ import java.sql.ResultSet;
 import java.sql.*;
 import com.google.gson.*;
 
+
+
 public class BilleteraController {
+
+    private BilleteraController oBilleteraCtrl;
+
+    public BilleteraController getBilleteraCtrl(){
+        return oBilleteraCtrl;
+    }
+
     public boolean add(Billetera oBilletera) {
         boolean bExito = false;
         if (oBilletera != null && oBilletera.checkBilletera()) {
@@ -13,6 +22,7 @@ public class BilleteraController {
             Gson oGson = new Gson();
             String json = "[" + oGson.toJson(oBilletera) + "]";
             System.out.println(json);
+            
 
             bExito = Controller.executeProcedure(json, "{call Billetera_create(?)}");
 

@@ -6,6 +6,15 @@ import java.sql.*;
 import com.google.gson.*;
 
 public class PaisController {
+
+    private PaisController oPaisCtrl;
+    public PaisController getPaisCtrl(){
+        return oPaisCtrl;
+    }
+
+
+
+
     public boolean add(Pais oPais) {
         boolean bExito = false;
         if (oPais != null && oPais.checkPais()) {
@@ -13,8 +22,7 @@ public class PaisController {
             Gson oGson = new Gson();
             String json = "[" + oGson.toJson(oPais) + "]";
             System.out.println(json);
-
-            bExito = Controller.executeProcedure(json, "{call Pais_create(?)}");
+            bExito = Controller.executeProcedure(json, "{call pais_create(?)}");
 
         }
         return bExito;

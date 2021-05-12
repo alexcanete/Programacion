@@ -10,7 +10,7 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE sTipoBilleteparam VARCHAR(255);
+    DECLARE sTipoBilleteParam VARCHAR(255);
     DECLARE sValorBilleteEUParam VARCHAR(255);   
     	
     SET vJsonIsValid = JSON_VALID(oObject);
@@ -25,7 +25,7 @@ BEGIN
         
             WHILE vIndex < vItems DO
 				
-                SET sTipoBilleteparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipoBillete')));
+                SET sTipoBilleteParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipoBillete')));
                 SET sValorBilleteEUParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sValorBilleteEU')));
                 
                 

@@ -7,12 +7,12 @@ import com.google.gson.*;
 
 
 public class BilleteController {
-    public boolean add(Billete obillete) {
+    public boolean add(Billete oBillete) {
         boolean bExito = false;
-        if (obillete != null && obillete.checkBillete()) {
+        if (oBillete != null && oBillete.checkBillete()) {
 
             Gson oGson = new Gson();
-            String json = "[" + oGson.toJson(obillete) + "]";
+            String json = "[" + oGson.toJson(oBillete) + "]";
             System.out.println(json);
 
             bExito = Controller.executeProcedure(json, "{call billete_create(?)}");
@@ -21,24 +21,24 @@ public class BilleteController {
         return bExito;
     }
 
-    public boolean update(Billete obillete) {
+    public boolean update(Billete oBillete) {
         boolean bExito = false;
-        if (obillete != null) {
+        if (oBillete != null) {
 
             Gson oGson = new Gson();
-            String json = "[" + oGson.toJson(obillete) + "]";
+            String json = "[" + oGson.toJson(oBillete) + "]";
 
             bExito = Controller.executeProcedure(json, "{call billete_update(?)}");
         }
         return bExito;
     }
 
-    public Billete search(Billete obillete) {
-        Billete obilleteResult = null;
-        if (obillete != null) {
+    public Billete search(Billete oBillete) {
+        Billete oBilleteResult = null;
+        if (oBillete != null) {
 
             Gson oGson = new Gson();
-            String json = "[" + oGson.toJson(obillete) + "]";
+            String json = "[" + oGson.toJson(oBillete) + "]";
 
             try {
 
@@ -47,9 +47,9 @@ public class BilleteController {
 
                 ResultSet rs = statement.executeQuery();
                 if (rs.next()) {
-                    obilleteResult = new Billete(obillete.getsTipoBillete());
-                    obilleteResult.setsTipoBillete(rs.getString(2));
-                    obilleteResult.setsValorBilleteEU(rs.getString(3));
+                    oBilleteResult = new Billete(oBillete.getsTipoBillete());
+                    oBilleteResult.setsTipoBillete(rs.getString(2));
+                    oBilleteResult.setsValorBilleteEU(rs.getString(3));
                 }
 
                 statement.close();
@@ -58,15 +58,18 @@ public class BilleteController {
                 ex.printStackTrace();
             }
         }
-        return obilleteResult;
+        return oBilleteResult;
     }
 
-    public boolean remove(Billete obillete) {
+    public boolean remove(Billete oBillete) {
 
         boolean bExito = false;
-        if (obillete != null) {
+        if (oBillete != null) {
             Gson oGson = new Gson();
-            String json = "[" + oGson.toJson(obillete) + "]";
+            String json = "[" + oGson.toJson(oBillete) + "]";   
+            System.out.println(json);
+
+
             bExito = Controller.executeProcedure(json, "{call billete_delete(?)}");
         }
         return bExito;

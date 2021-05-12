@@ -9,11 +9,9 @@ BEGIN
     DECLARE vIndex BIGINT UNSIGNED DEFAULT 0;
     
     # Variables para parseo del objeto JSON
-    DECLARE sTipomonedaparam VARCHAR(255);
-    DECLARE sValormonedaEUParam VARCHAR(255);
-    DECLARE vValido INT;
+    DECLARE sTipoMonedaparam VARCHAR(255);
+    DECLARE sValorMonedaEUParam VARCHAR(255);
 	
-    SET vValido = 0;
     SET vJsonIsValid = JSON_VALID(oObject);
     
 	IF vJsonIsValid = 0 THEN
@@ -26,19 +24,17 @@ BEGIN
 			
             WHILE vIndex < vItems DO
 
-                SET sTipomonedaparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipomoneda')));
-                SET sValormonedaEUParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sValormonedaEU')));
+                SET sTipoMonedaparam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sTipoMoneda')));
+                SET sValorMonedaEUParam = JSON_UNQUOTE(JSON_EXTRACT(oObject, CONCAT('$[', vIndex, '].sValorMonedaEU')));
                 
-                INSERT INTO moneda VALUES (`sTipomonedaParam`, `sValormonedaEUParam`);
+                INSERT INTO BILLETE VALUES (`sTipoMonedaParam`, `sValorMonedaEUParam`);
                   
                 SET vIndex = vIndex + 1;
             END WHILE;
             
-            SET vValido = 1;
         END IF;	
     END IF;
     
-    SELECT vValido;
     
 END $$
 DELIMITER ;
