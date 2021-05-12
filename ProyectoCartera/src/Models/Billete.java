@@ -43,7 +43,7 @@ public class Billete implements IBillete {
     public boolean equals(Object o) {
         Billete bBillete = (Billete) o;
         boolean boEquals = false;
-        if (this.getsTipoBillete() == (bBillete.getsTipoBillete())) {
+        if (bBillete != null && this.getsTipoBillete() == (bBillete.getsTipoBillete())) {
             boEquals = true;
         }
         return boEquals;

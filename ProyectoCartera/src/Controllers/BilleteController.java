@@ -35,7 +35,7 @@ public class BilleteController {
 
     public Billete search(Billete oBillete) {
         Billete oBilleteResult = null;
-        if (oBillete != null) {
+        if (oBillete != null && oBillete.getsTipoBillete() != null) {
 
             Gson oGson = new Gson();
             String json = "[" + oGson.toJson(oBillete) + "]";
@@ -64,7 +64,7 @@ public class BilleteController {
     public boolean remove(Billete oBillete) {
 
         boolean bExito = false;
-        if (oBillete != null) {
+        if (oBillete != null && oBillete.getsTipoBillete() != null) {
             Gson oGson = new Gson();
             String json = "[" + oGson.toJson(oBillete) + "]";   
             System.out.println(json);
